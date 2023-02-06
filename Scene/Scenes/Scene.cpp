@@ -35,14 +35,14 @@ void Scene::Update()
 	//===================================================
 	// [프레임 제한]
 	//===================================================
-	static auto timer = context->GetSubSystem<Timer>();
-	static float delta_time = 0.0f;
-	delta_time += timer->GetDeltaTimeMS();
-	if (delta_time > (1000 / FPS))
-	{
-		delta_time = 0.0f;
-		return;
-	}
+	//static auto timer = context->GetSubSystem<Timer>();
+	//static float delta_time = 0.0f;
+	//delta_time += timer->GetDeltaTimeMS();
+	//if (delta_time > (1000 / FPS))
+	//{
+	//	delta_time = 0.0f;
+	//	return;
+	//}
 	//===================================================
 	// [Scene Update]
 	//===================================================

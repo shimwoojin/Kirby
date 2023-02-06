@@ -2,6 +2,7 @@
 //Windows.h
 #include "stdafx.h"
 
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 namespace Window
 {
@@ -19,6 +20,9 @@ namespace Window
                                 LPARAM lParam
                             )
     {
+        if (ImGui_ImplWin32_WndProcHandler(handle, message, wParam, lParam))
+            return true;
+
         switch (message) // 메세지 내용 switch
         {
         case WM_CLOSE:   // 윈도우가 닫혔을 때

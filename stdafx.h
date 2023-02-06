@@ -58,6 +58,9 @@ using uint = unsigned int;
 #include "Utility/GUID_Generator.h"
 #include "Utility/Xml.h"
 #include "Utility/Collide/Collide.h"
+#include "Utility/Imgui/imgui.h"
+#include "Utility/Imgui/imgui_impl_win32.h"
+#include "Utility/Imgui/imgui_impl_dx11.h"
 
 //Framework
 #include "Core/Settings.h"

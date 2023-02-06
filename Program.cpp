@@ -27,6 +27,7 @@ int APIENTRY WinMain
 	while (Window::Update())
 	{
 		engine->Update();
+		engine->Render();
 	}
 
 	Window::Destroy();

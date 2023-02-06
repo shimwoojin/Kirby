@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "Core/SubSystem/ISubSystem.h"
+#include "Core/SubSystem/Renderer/Renderer.h"
 
 class Context final
 {
@@ -53,7 +54,10 @@ public:
 	void UpdateSubSystems()
 	{
 		for (const auto& subsystem : subsystems)
-			subsystem->Update();
+		{
+			if(typeid(*subsystem) != typeid(Renderer))
+				subsystem->Update();
+		}
 	}
 
 private:

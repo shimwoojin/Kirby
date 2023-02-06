@@ -57,6 +57,14 @@
     <ClInclude Include="Core\SubSystem\InputManager.h" />
     <ClInclude Include="Utility\Collide\Collide.h" />
     <ClInclude Include="Scene\Scenes\Scene_1_3.h" />
+    <ClInclude Include="Utility\Imgui\imconfig.h" />
+    <ClInclude Include="Utility\Imgui\imgui.h" />
+    <ClInclude Include="Utility\Imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="Utility\Imgui\imgui_impl_win32.h" />
+    <ClInclude Include="Utility\Imgui\imgui_internal.h" />
+    <ClInclude Include="Utility\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="Utility\Imgui\imstb_textedit.h" />
+    <ClInclude Include="Utility\Imgui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -109,5 +117,12 @@
     <ClCompile Include="Core\SubSystem\InputManager.cpp" />
     <ClCompile Include="Utility\Collide\Collide.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_3.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui_tables.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui_widgets.cpp" />
   </ItemGroup>
 </Project>

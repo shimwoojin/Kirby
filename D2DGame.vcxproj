@@ -179,6 +179,14 @@
     <ClInclude Include="Scene\Scenes\Scene_1_2.h" />
     <ClInclude Include="Scene\Scenes\Scene_1_3.h" />
     <ClInclude Include="Utility\Collide\Collide.h" />
+    <ClInclude Include="Utility\Imgui\imconfig.h" />
+    <ClInclude Include="Utility\Imgui\imgui.h" />
+    <ClInclude Include="Utility\Imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="Utility\Imgui\imgui_impl_win32.h" />
+    <ClInclude Include="Utility\Imgui\imgui_internal.h" />
+    <ClInclude Include="Utility\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="Utility\Imgui\imstb_textedit.h" />
+    <ClInclude Include="Utility\Imgui\imstb_truetype.h" />
     <ClInclude Include="Utility\Math\Math.h" />
     <ClInclude Include="Scene\Component\TransformComponent.h" />
     <ClInclude Include="Scene\Scenes\Scene.h" />
@@ -234,6 +242,27 @@
     <ClCompile Include="Scene\Scenes\Scene_1_2.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_3.cpp" />
     <ClCompile Include="Utility\Collide\Collide.cpp" />
+    <ClCompile Include="Utility\Imgui\imgui.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utility\Imgui\imgui_demo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utility\Imgui\imgui_draw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utility\Imgui\imgui_impl_dx11.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utility\Imgui\imgui_impl_win32.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utility\Imgui\imgui_tables.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utility\Imgui\imgui_widgets.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Utility\Math\Math.cpp" />
     <ClCompile Include="Scene\Scenes\Scene.cpp" />
     <ClCompile Include="Core\SubSystem\Timer.cpp" />
