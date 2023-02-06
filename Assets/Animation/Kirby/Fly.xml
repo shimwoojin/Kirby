@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Fly" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="3" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+  <Keyframe OffsetX="32" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+  <Keyframe OffsetX="62" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+  <Keyframe OffsetX="90" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+  <Keyframe OffsetX="122" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+  <Keyframe OffsetX="152" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+  <Keyframe OffsetX="182" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+  <Keyframe OffsetX="211" OffsetY="174" SizeX="26" SizeY="28" Time="200"/>
+</Animation>

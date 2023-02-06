@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="M_Fire1_Walk" Type="1" TexturePath="Assets/Texture/Enemies/Enemies.png" TextureSizeX="873" TextureSizeY="1239">
+  <Keyframe OffsetX="35" OffsetY="248" SizeX="22" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="61" OffsetY="248" SizeX="22" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="86" OffsetY="248" SizeX="22" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="112" OffsetY="248" SizeX="22" SizeY="21" Time="200"/>
+</Animation>

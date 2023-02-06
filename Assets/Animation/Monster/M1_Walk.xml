@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="M1_Walk" Type="1" TexturePath="Assets/Texture/Enemies/Enemies.png" TextureSizeX="873" TextureSizeY="1239">
+  <Keyframe OffsetX="28" OffsetY="158" SizeX="26" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="55" OffsetY="158" SizeX="26" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="82" OffsetY="158" SizeX="26" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="109" OffsetY="158" SizeX="26" SizeY="21" Time="200"/>
+</Animation>

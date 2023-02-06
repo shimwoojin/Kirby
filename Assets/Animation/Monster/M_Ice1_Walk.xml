@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="M_Ice1_Walk" Type="1" TexturePath="Assets/Texture/Enemies/Enemies.png" TextureSizeX="873" TextureSizeY="1239">
+  <Keyframe OffsetX="2" OffsetY="9" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="31" OffsetY="9" SizeX="22" SizeY="20" Time="200"/>
+</Animation>

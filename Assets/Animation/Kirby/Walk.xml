@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Walk" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="3" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="29" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="54" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="78" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="101" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="125" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="148" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="173" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="197" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+  <Keyframe OffsetX="223" OffsetY="98" SizeX="22" SizeY="20" Time="200"/>
+</Animation>

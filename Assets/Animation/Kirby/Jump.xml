@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Jump" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="4" OffsetY="425" SizeX="22" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="29" OffsetY="425" SizeX="22" SizeY="21" Time="200"/>
+</Animation>

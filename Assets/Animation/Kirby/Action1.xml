@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Action1" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="86" OffsetY="524" SizeX="23" SizeY="20" Time="300"/>
+  <Keyframe OffsetX="113" OffsetY="524" SizeX="23" SizeY="20" Time="600"/>
+</Animation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Run" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="32" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="56" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="78" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="102" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="126" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="148" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="148" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+  <Keyframe OffsetX="171" OffsetY="122" SizeX="21" SizeY="21" Time="200"/>
+</Animation>

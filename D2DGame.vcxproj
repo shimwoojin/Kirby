@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{497268e2-f907-4707-838b-66cdce4bb3ba}</ProjectGuid>
+    <RootNamespace>D2DGame</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>./;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Context.h" />
+    <ClInclude Include="Core\SubSystem\InputManager.h" />
+    <ClInclude Include="Core\SubSystem\Renderer\Renderer.h" />
+    <ClInclude Include="Core\SubSystem\Renderer\Renderer_ConstantBuffers.h" />
+    <ClInclude Include="Core\SubSystem\Renderer\Renderer_Types.h" />
+    <ClInclude Include="Core\SubSystem\ResourceManager.h" />
+    <ClInclude Include="Core\SubSystem\SceneManager.h" />
+    <ClInclude Include="Core\Engine.h" />
+    <ClInclude Include="Core\SubSystem\ISubSystem.h" />
+    <ClInclude Include="Scene\Actors\Monster.h" />
+    <ClInclude Include="Scene\Actors\Player.h" />
+    <ClInclude Include="Resource\Animation.h" />
+    <ClInclude Include="Resource\IResource.h" />
+    <ClInclude Include="Resource\Shader.h" />
+    <ClInclude Include="Resource\Texture2D.h" />
+    <ClInclude Include="Scene\Component\AiScriptBasicComponent.h" />
+    <ClInclude Include="Scene\Component\AnimatorComponent.h" />
+    <ClInclude Include="Scene\Component\BackGroundComponent.h" />
+    <ClInclude Include="Scene\Component\MaterialRendererComponent.h" />
+    <ClInclude Include="Scene\Component\MoveScriptComponent.h" />
+    <ClInclude Include="Scene\Component\MeshRendererComponent.h" />
+    <ClInclude Include="Scene\Component\IComponent.h" />
+    <ClInclude Include="Scene\Actors\Actor.h" />
+    <ClInclude Include="Core\D3D11\D3D11_Pipeline.h" />
+    <ClInclude Include="Core\Object.h" />
+    <ClInclude Include="Scene\Component\PhysicsComponent.h" />
+    <ClInclude Include="Scene\Component\StateComponent.h" />
+    <ClInclude Include="Scene\Scenes\Scene_1_1.h" />
+    <ClInclude Include="Scene\Scenes\Scene_1_2.h" />
+    <ClInclude Include="Scene\Scenes\Scene_1_3.h" />
+    <ClInclude Include="Utility\Collide\Collide.h" />
+    <ClInclude Include="Utility\Math\Math.h" />
+    <ClInclude Include="Scene\Component\TransformComponent.h" />
+    <ClInclude Include="Scene\Scenes\Scene.h" />
+    <ClInclude Include="Core\SubSystem\Timer.h" />
+    <ClInclude Include="Utility\GUID_Generator.h" />
+    <ClInclude Include="Utility\Geometry_Generator.h" />
+    <ClInclude Include="Scene\Component\CameraComponent.h" />
+    <ClInclude Include="Core\D3D11\OutputMerger\D3D11_BlendState.h" />
+    <ClInclude Include="Core\D3D11\Shader\D3D11_SamplerState.h" />
+    <ClInclude Include="Core\D3D11\Shader\D3D11_Texture.h" />
+    <ClInclude Include="Core\D3D11\Rasterizer\D3D11_Viewport.h" />
+    <ClInclude Include="Core\D3D11\Rasterizer\D3D11_RasterizerState.h" />
+    <ClInclude Include="Core\D3D11\Shader\D3D11_ConstantBuffer.h" />
+    <ClInclude Include="Core\D3D11\Shader\D3D11_Shader.h" />
+    <ClInclude Include="Core\D3D11\InputAssembler\D3D11_InputLayout.h" />
+    <ClInclude Include="Core\D3D11\InputAssembler\D3D11_IndexBuffer.h" />
+    <ClInclude Include="Core\D3D11\InputAssembler\D3D11_VertexBuffer.h" />
+    <ClInclude Include="Core\SubSystem\Graphics.h" />
+    <ClInclude Include="Core\Settings.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Core\D3D11\Vertex\D3D11_Geometry.h" />
+    <ClInclude Include="Core\D3D11\Vertex\D3D11_Vertex.h" />
+    <ClInclude Include="Core\D3D11\Vertex\D3D11_Geometry.inl" />
+    <ClInclude Include="Core\Window.h" />
+    <ClInclude Include="Utility\Xml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\SubSystem\InputManager.cpp" />
+    <ClCompile Include="Core\SubSystem\Renderer\Renderer_Passes.cpp" />
+    <ClCompile Include="Core\SubSystem\Renderer\Renderer_Resources.cpp" />
+    <ClCompile Include="Core\SubSystem\ResourceManager.cpp" />
+    <ClCompile Include="Core\SubSystem\SceneManager.cpp" />
+    <ClCompile Include="Core\Engine.cpp" />
+    <ClCompile Include="Core\SubSystem\Renderer\Renderer.cpp" />
+    <ClCompile Include="Scene\Actors\Monster.cpp" />
+    <ClCompile Include="Scene\Actors\Player.cpp" />
+    <ClCompile Include="Resource\Animation.cpp" />
+    <ClCompile Include="Resource\IResource.cpp" />
+    <ClCompile Include="Resource\Shader.cpp" />
+    <ClCompile Include="Resource\Texture2D.cpp" />
+    <ClCompile Include="Scene\Component\AiScriptBasicComponent.cpp" />
+    <ClCompile Include="Scene\Component\AnimatorComponent.cpp" />
+    <ClCompile Include="Scene\Component\BackGroundComponent.cpp" />
+    <ClCompile Include="Scene\Component\MaterialRendererComponent.cpp" />
+    <ClCompile Include="Scene\Component\MoveScriptComponent.cpp" />
+    <ClCompile Include="Scene\Component\MeshRendererComponent.cpp" />
+    <ClCompile Include="Scene\Component\IComponent.cpp" />
+    <ClCompile Include="Scene\Actors\Actor.cpp" />
+    <ClCompile Include="Core\D3D11\D3D11_Pipeline.cpp" />
+    <ClCompile Include="Scene\Component\PhysicsComponent.cpp" />
+    <ClCompile Include="Scene\Component\StateComponent.cpp" />
+    <ClCompile Include="Scene\Scenes\Scene_1_1.cpp" />
+    <ClCompile Include="Scene\Scenes\Scene_1_2.cpp" />
+    <ClCompile Include="Scene\Scenes\Scene_1_3.cpp" />
+    <ClCompile Include="Utility\Collide\Collide.cpp" />
+    <ClCompile Include="Utility\Math\Math.cpp" />
+    <ClCompile Include="Scene\Scenes\Scene.cpp" />
+    <ClCompile Include="Core\SubSystem\Timer.cpp" />
+    <ClCompile Include="Scene\Component\TransformComponent.cpp" />
+    <ClCompile Include="Utility\GUID_Generator.cpp" />
+    <ClCompile Include="Utility\Geometry_Generator.cpp" />
+    <ClCompile Include="Scene\Component\CameraComponent.cpp" />
+    <ClCompile Include="Core\D3D11\OutputMerger\D3D11_BlendState.cpp" />
+    <ClCompile Include="Core\D3D11\Shader\D3D11_SamplerState.cpp" />
+    <ClCompile Include="Core\D3D11\Shader\D3D11_Texture.cpp" />
+    <ClCompile Include="Core\D3D11\Rasterizer\D3D11_Viewport.cpp" />
+    <ClCompile Include="Core\D3D11\Rasterizer\D3D11_RasterizerState.cpp" />
+    <ClCompile Include="Core\D3D11\Shader\D3D11_ConstantBuffer.cpp" />
+    <ClCompile Include="Core\D3D11\Shader\D3D11_Shader.cpp" />
+    <ClCompile Include="Core\D3D11\InputAssembler\D3D11_InputLayout.cpp" />
+    <ClCompile Include="Core\D3D11\InputAssembler\D3D11_IndexBuffer.cpp" />
+    <ClCompile Include="Core\D3D11\InputAssembler\D3D11_VertexBuffer.cpp" />
+    <ClCompile Include="Core\SubSystem\Graphics.cpp" />
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Core\D3D11\Vertex\D3D11_Vertex.cpp" />
+    <ClCompile Include="Utility\Xml.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

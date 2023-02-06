@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Idle" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="5" OffsetY="5" SizeX="20" SizeY="19" Time="400"/>
+  <Keyframe OffsetX="30" OffsetY="5" SizeX="20" SizeY="19" Time="400"/>
+</Animation>
