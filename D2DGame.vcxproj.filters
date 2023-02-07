@@ -67,6 +67,7 @@
     <ClInclude Include="Utility\Imgui\imstb_truetype.h" />
     <ClInclude Include="Scene\Scenes\Scene_1_4.h" />
     <ClInclude Include="Scene\Component\ColliderComponent.h" />
+    <ClInclude Include="Scene\Component\SceneChangeComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -128,5 +129,6 @@
     <ClCompile Include="Utility\Imgui\imgui_widgets.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_4.cpp" />
     <ClCompile Include="Scene\Component\ColliderComponent.cpp" />
+    <ClCompile Include="Scene\Component\SceneChangeComponent.cpp" />
   </ItemGroup>
 </Project>

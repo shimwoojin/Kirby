@@ -12,6 +12,7 @@
 #include "Scene/Component/BackGroundComponent.h"
 #include "Scene/Component/PhysicsComponent.h"
 #include "Scene/Component/ColliderComponent.h"
+#include "Scene/Component/SceneChangeComponent.h"
 
 std::shared_ptr<Actor> Scene::player = nullptr;
 
@@ -47,19 +48,10 @@ void Scene::Update()
 	//===================================================
 	// [Scene Update]
 	//===================================================
-
-	for (const auto& actor : actors)
-		actor->Update();
-
-	if (is_update == true)
-	{
-		renderer->UpdateRenderables(this);
-		is_update = false;
-	}
 	
 	if (scene_change == true)
 	{
-		player->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f, 500.0f, 1.0f));		//플레이어 위치
+		player->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f, 100.0f, 1.0f));		//플레이어 위치
 
 		player->GetComponent<MoveScriptComponent>()->SetSceneSize(scene_size);	//update
 		auto physics = player->GetComponent<PhysicsComponent>();//update
@@ -68,12 +60,22 @@ void Scene::Update()
 		camera->SetScene(this);//update
 		auto collider = player->GetComponent<ColliderComponent>();//update
 		collider->SetScene(this);//update
-		actors[0]->GetComponent<BackGroundComponent>()->SetCamera(camera.get());//배경 update
+		actors[0]->GetComponent<BackGroundComponent>()->SetCamera(camera.get());	//배경 update
+		actors[1]->GetComponent<SceneChangeComponent>()->SetScene(this);			//문 update
 
 		renderer->UpdateRenderables(this);
 
 		scene_change = false;
 	}
+
+	if (is_update == true)
+	{
+		renderer->UpdateRenderables(this);
+		is_update = false;
+	}
+
+	for (const auto& actor : actors)
+		actor->Update();
 }
 
 const std::shared_ptr<class Actor> Scene::CreateActor(const bool& is_active)

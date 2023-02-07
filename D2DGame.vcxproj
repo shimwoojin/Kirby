@@ -175,6 +175,7 @@
     <ClInclude Include="Core\D3D11\D3D11_Pipeline.h" />
     <ClInclude Include="Core\Object.h" />
     <ClInclude Include="Scene\Component\PhysicsComponent.h" />
+    <ClInclude Include="Scene\Component\SceneChangeComponent.h" />
     <ClInclude Include="Scene\Component\StateComponent.h" />
     <ClInclude Include="Scene\Scenes\Scene_1_1.h" />
     <ClInclude Include="Scene\Scenes\Scene_1_2.h" />
@@ -240,6 +241,7 @@
     <ClCompile Include="Scene\Actors\Actor.cpp" />
     <ClCompile Include="Core\D3D11\D3D11_Pipeline.cpp" />
     <ClCompile Include="Scene\Component\PhysicsComponent.cpp" />
+    <ClCompile Include="Scene\Component\SceneChangeComponent.cpp" />
     <ClCompile Include="Scene\Component\StateComponent.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_1.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_2.cpp" />

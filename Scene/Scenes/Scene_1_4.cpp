@@ -13,6 +13,7 @@
 #include "Scene/Component/BackGroundComponent.h"
 #include "Scene/Component/AiScriptBasicComponent.h"
 #include "Scene/Component/PhysicsComponent.h"
+#include "Scene/Component/SceneChangeComponent.h"
 
 Scene_1_4::Scene_1_4(Context* const context)
 	: Scene(context)
@@ -27,6 +28,10 @@ void Scene_1_4::Init()
 {
 	//배경
 	auto back_ground = AddBackGround("BackGround_Forest.png");
+
+	//문
+	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 1660.0f);
+	auto scene_change = door->AddComponent<SceneChangeComponent>();
 
 	//맵 타일
 	std::shared_ptr<Actor> map_tiles[70];
@@ -55,9 +60,6 @@ void Scene_1_4::Init()
 	for(int i = 50; i < 53; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(290.0f + 60.0f * (i - 50), 1350.0f, 1.0f));
 	for(int i = 53; i < 56; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 53), 1470.0f, 1.0f));
 	for(int i = 56; i < 70; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(290.0f + 60.0f * (i - 56), 1590.0f, 1.0f));
-
-	//문
-	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 1660.0f);
 
 	//플레이어
 	AddActor(player);

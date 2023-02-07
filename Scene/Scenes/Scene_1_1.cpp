@@ -14,6 +14,7 @@
 #include "Scene/Component/AiScriptBasicComponent.h"
 #include "Scene/Component/PhysicsComponent.h"
 #include "Scene/Component/ColliderComponent.h"
+#include "Scene/Component/SceneChangeComponent.h"
 
 Scene_1_1::Scene_1_1(Context* const context)
 	: Scene(context)
@@ -22,8 +23,12 @@ Scene_1_1::Scene_1_1(Context* const context)
 
 void Scene_1_1::Init()
 {
-	//배경
+	//배경 -> 0번 액터 고정
 	auto back_ground = AddBackGround("BackGround_Forest.png");
+
+	//문 -> 1번 액터 고정
+	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 160.0f);
+	auto scene_change = door->AddComponent<SceneChangeComponent>();
 
 	//맵 타일
 	std::shared_ptr<Actor> map_tiles[60];
@@ -48,9 +53,6 @@ void Scene_1_1::Init()
 		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1230.0f + 60.0f * (i - 40), 90.0f, 1.0f));
 	}
 
-	//문
-	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 160.0f);
-
 	//플레이어
 	AddActor(player);
 	
@@ -73,5 +75,6 @@ void Scene_1_1::Init()
 	camera->SetScene(this);//update
 	auto collider = player->GetComponent<ColliderComponent>();//update
 	collider->SetScene(this);//update
+	scene_change->SetScene(this);
 	back_ground->GetComponent<BackGroundComponent>()->SetCamera(camera.get());//update
 }

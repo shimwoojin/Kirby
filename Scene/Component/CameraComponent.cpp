@@ -6,8 +6,8 @@
 
 void CameraComponent::Initialize()
 {
-	key = context->GetSubSystem<InputManager>();
-	scene_manager = context->GetSubSystem<SceneManager>();
+	//key = context->GetSubSystem<InputManager>();
+	//scene_manager = context->GetSubSystem<SceneManager>();
 
 	D3DXMatrixIdentity(&view);
 	D3DXMatrixIdentity(&projection);
@@ -22,21 +22,21 @@ void CameraComponent::Update()
 	UpdateViewMatrix();
 	UpdateProjectionMatrix();
 
-	if (key->IsHoldOrDown(DIK_W))
-	{
-		auto actors = scene->GetActors();
-		for (const auto& actor : actors)
-		{
-			auto type = actor.get()->GetActorType();
-			if (type == ActorType::Door)
-			{
-				if (Collide::IsCollided(scene->GetPlayer().get(), actor.get()) == true)
-				{
-					scene_manager->SetCurrentScene("1-2");
-				}
-			}
-		}
-	}
+	//if (key->IsHoldOrDown(DIK_W))
+	//{
+	//	auto actors = scene->GetActors();
+	//	for (const auto& actor : actors)
+	//	{
+	//		auto type = actor.get()->GetActorType();
+	//		if (type == ActorType::Door)
+	//		{
+	//			if (Collide::IsCollided(scene->GetPlayer().get(), actor.get()) == true)
+	//			{
+	//				scene_manager->SetCurrentScene("1-2");
+	//			}
+	//		}
+	//	}
+	//}
 }
 
 void CameraComponent::Destroy()
