@@ -7,6 +7,7 @@
 #include "Scene/Component/AnimatorComponent.h"
 #include "Scene/Component/TransformComponent.h"
 #include "Scene/Component/PhysicsComponent.h"
+#include "Scene/Component/ColliderComponent.h"
 
 Player::Player(Context* const context)
 	: Actor(context)
@@ -24,6 +25,7 @@ void Player::AddComponents()
 	AddComponent<CameraComponent>();
 	AddComponent<PhysicsComponent>();
 	AddComponent<StateComponent>();
+	AddComponent<ColliderComponent>();
 	AddComponent<MoveScriptComponent>();
 	AddComponent<MeshRendererComponent>();
 	AddComponent<AnimatorComponent>();

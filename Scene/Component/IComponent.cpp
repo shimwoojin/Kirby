@@ -10,6 +10,7 @@
 #include "BackGroundComponent.h"
 #include "AiScriptBasicComponent.h"
 #include "PhysicsComponent.h"
+#include "ColliderComponent.h"
 
 IComponent::IComponent(class Context* const context, Actor* const actor, TransformComponent* const transform)
 	: context(context)
@@ -36,3 +37,4 @@ REGISTER_COMPONENT_TYPE(MaterialRendererComponent, ComponentType::Material)
 REGISTER_COMPONENT_TYPE(BackGroundComponent, ComponentType::BackGround)
 REGISTER_COMPONENT_TYPE(AiScriptBasicComponent, ComponentType::AiScript_Basic)
 REGISTER_COMPONENT_TYPE(PhysicsComponent, ComponentType::Physics)
+REGISTER_COMPONENT_TYPE(ColliderComponent, ComponentType::Collider)

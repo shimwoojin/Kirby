@@ -11,6 +11,7 @@
 #include "Scene/Component/MaterialRendererComponent.h"
 #include "Scene/Component/BackGroundComponent.h"
 #include "Scene/Component/PhysicsComponent.h"
+#include "Scene/Component/ColliderComponent.h"
 
 std::shared_ptr<Actor> Scene::player = nullptr;
 
@@ -65,6 +66,8 @@ void Scene::Update()
 		physics->SetScene(this);//update
 		auto camera = player->GetComponent<CameraComponent>();//update
 		camera->SetScene(this);//update
+		auto collider = player->GetComponent<ColliderComponent>();//update
+		collider->SetScene(this);//update
 		actors[0]->GetComponent<BackGroundComponent>()->SetCamera(camera.get());//¹è°æ update
 
 		renderer->UpdateRenderables(this);

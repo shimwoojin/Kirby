@@ -166,6 +166,7 @@
     <ClInclude Include="Scene\Component\AiScriptBasicComponent.h" />
     <ClInclude Include="Scene\Component\AnimatorComponent.h" />
     <ClInclude Include="Scene\Component\BackGroundComponent.h" />
+    <ClInclude Include="Scene\Component\ColliderComponent.h" />
     <ClInclude Include="Scene\Component\MaterialRendererComponent.h" />
     <ClInclude Include="Scene\Component\MoveScriptComponent.h" />
     <ClInclude Include="Scene\Component\MeshRendererComponent.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Scene\Scenes\Scene_1_1.h" />
     <ClInclude Include="Scene\Scenes\Scene_1_2.h" />
     <ClInclude Include="Scene\Scenes\Scene_1_3.h" />
+    <ClInclude Include="Scene\Scenes\Scene_1_4.h" />
     <ClInclude Include="Utility\Collide\Collide.h" />
     <ClInclude Include="Utility\Imgui\imconfig.h" />
     <ClInclude Include="Utility\Imgui\imgui.h" />
@@ -230,6 +232,7 @@
     <ClCompile Include="Scene\Component\AiScriptBasicComponent.cpp" />
     <ClCompile Include="Scene\Component\AnimatorComponent.cpp" />
     <ClCompile Include="Scene\Component\BackGroundComponent.cpp" />
+    <ClCompile Include="Scene\Component\ColliderComponent.cpp" />
     <ClCompile Include="Scene\Component\MaterialRendererComponent.cpp" />
     <ClCompile Include="Scene\Component\MoveScriptComponent.cpp" />
     <ClCompile Include="Scene\Component\MeshRendererComponent.cpp" />
@@ -241,6 +244,7 @@
     <ClCompile Include="Scene\Scenes\Scene_1_1.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_2.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_3.cpp" />
+    <ClCompile Include="Scene\Scenes\Scene_1_4.cpp" />
     <ClCompile Include="Utility\Collide\Collide.cpp" />
     <ClCompile Include="Utility\Imgui\imgui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>

@@ -4,6 +4,7 @@
 #include "Scene/Scenes/Scene_1_1.h"
 #include "Scene/Scenes/Scene_1_2.h"
 #include "Scene/Scenes/Scene_1_3.h"
+#include "Scene/Scenes/Scene_1_4.h"
 
 SceneManager::~SceneManager()
 {
@@ -14,6 +15,7 @@ bool SceneManager::Initialize()
     RegisterScene<Scene_1_1>("1-1");
     RegisterScene<Scene_1_2>("1-2");
     RegisterScene <Scene_1_3>("1-3");
+    RegisterScene <Scene_1_4>("1-4");
     SetCurrentScene("1-1");
 
     return true;
@@ -35,6 +37,11 @@ void SceneManager::Update()
     {
         scenes["1-3"]->SetSceneChange(true);
         SetCurrentScene("1-3");
+    }
+    else if (GetAsyncKeyState(VK_F4) & 0x8000)
+    {
+        scenes["1-4"]->SetSceneChange(true);
+        SetCurrentScene("1-4");
     }
 
     if (current_scene.expired()) assert(false);

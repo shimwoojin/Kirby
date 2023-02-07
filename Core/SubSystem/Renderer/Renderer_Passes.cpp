@@ -15,6 +15,16 @@ void Renderer::PassMain()
 
 	if (actors.empty() == true) return;
 
+	static RasterizerStateType RSType;
+	if(ImGui::Begin("WireFrame"))
+	{
+		static bool flag = true;
+		ImGui::Checkbox("Solid", &flag);
+		if (flag == false) RSType = RasterizerStateType::Cull_Back_Fill_Wireframe;
+		else RSType = RasterizerStateType::Cull_Back_Fill_Solid;
+	}
+	ImGui::End();
+
 	for (const auto& actor : actors)
 	{
 		auto renderable = actor->GetComponent<MeshRendererComponent>();
@@ -28,7 +38,7 @@ void Renderer::PassMain()
 
 		D3D11_PipelineState pipeline_state;
 		pipeline_state.primitive_topology = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
-		pipeline_state.rasterizer_state = rasterizers[RasterizerStateType::Cull_Back_Fill_Solid].get();
+		pipeline_state.rasterizer_state = rasterizers[RSType].get();
 		pipeline_state.blend_state = blend_states[BlendStateType::Alpha].get();
 
 		if (animator != nullptr)

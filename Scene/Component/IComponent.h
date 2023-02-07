@@ -12,7 +12,8 @@ enum class ComponentType : uint
 	State,
 	Material,
 	BackGround,
-	Physics
+	Physics,
+	Collider
 };
 
 class IComponent

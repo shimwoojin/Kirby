@@ -13,6 +13,7 @@
 #include "Scene/Component/BackGroundComponent.h"
 #include "Scene/Component/AiScriptBasicComponent.h"
 #include "Scene/Component/PhysicsComponent.h"
+#include "Scene/Component/ColliderComponent.h"
 
 Scene_1_1::Scene_1_1(Context* const context)
 	: Scene(context)
@@ -70,5 +71,7 @@ void Scene_1_1::Init()
 	physics->SetScene(this);//update
 	auto camera = player->GetComponent<CameraComponent>();//update
 	camera->SetScene(this);//update
+	auto collider = player->GetComponent<ColliderComponent>();//update
+	collider->SetScene(this);//update
 	back_ground->GetComponent<BackGroundComponent>()->SetCamera(camera.get());//update
 }

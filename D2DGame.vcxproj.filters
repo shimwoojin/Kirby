@@ -65,6 +65,8 @@
     <ClInclude Include="Utility\Imgui\imstb_rectpack.h" />
     <ClInclude Include="Utility\Imgui\imstb_textedit.h" />
     <ClInclude Include="Utility\Imgui\imstb_truetype.h" />
+    <ClInclude Include="Scene\Scenes\Scene_1_4.h" />
+    <ClInclude Include="Scene\Component\ColliderComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -124,5 +126,7 @@
     <ClCompile Include="Utility\Imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="Utility\Imgui\imgui_tables.cpp" />
     <ClCompile Include="Utility\Imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Scene\Scenes\Scene_1_4.cpp" />
+    <ClCompile Include="Scene\Component\ColliderComponent.cpp" />
   </ItemGroup>
 </Project>
