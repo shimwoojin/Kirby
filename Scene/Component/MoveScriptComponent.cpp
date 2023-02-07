@@ -5,6 +5,7 @@
 #include "StateComponent.h"
 #include "CameraComponent.h"
 #include "PhysicsComponent.h"
+#include "ColliderComponent.h"
 
 void MoveScriptComponent::Initialize()
 {
@@ -15,8 +16,10 @@ void MoveScriptComponent::Update()
 	auto camera = actor->GetComponent<CameraComponent>();
 	auto state = actor->GetComponent<StateComponent>();
 	auto physics = actor->GetComponent<PhysicsComponent>();
+	auto collider = actor->GetComponent<ColliderComponent>();
 	auto key = context->GetSubSystem<InputManager>();
-	if (!camera || !state || !physics || !key) { assert(false); return; }	//다른 컴포넌트 널 체크
+
+	if (!camera || !state || !physics || !collider || !key) { assert(false); return; }	//다른 컴포넌트 널 체크
 
 	physics->SetIsUpdate(true);	//물리 항시 적용
 
@@ -27,30 +30,32 @@ void MoveScriptComponent::Update()
 	case State::Idle: break;
 	case State::Walk: 
 	{
-		if (state->GetIsMirroredAnimation() == false) position.x += speed;
-		else position.x -= speed;
+		if (key->IsHoldOrDown(DIK_D) && collider->IsCollideRightTile() == false) position.x += speed;
+		if (key->IsHoldOrDown(DIK_A) && collider->IsCollideLeftTile() == false) position.x -= speed;
 		break;
 	}
 	case State::Jump: 
 	{
 		position.y += (jump_speed - physics->GetGravity());
 
-		if (key->IsHoldOrDown(DIK_D)) position.x += speed;
-		if (key->IsHoldOrDown(DIK_A)) position.x -= speed;
+		if (key->IsHoldOrDown(DIK_D) && collider->IsCollideRightTile() == false) position.x += speed;
+		if (key->IsHoldOrDown(DIK_A) && collider->IsCollideLeftTile() == false) position.x -= speed;
 		break;
 	}
 	case State::Run:
 	{
-		if (state->GetIsMirroredAnimation() == false) position.x += run_speed;
-		else position.x -= run_speed;
+		if (key->IsHoldOrDown(DIK_D) && collider->IsCollideRightTile() == false) position.x += run_speed;
+		if (key->IsHoldOrDown(DIK_A) && collider->IsCollideLeftTile() == false) position.x -= run_speed;
 		break;
 	}
 	case State::Fly: 
 	{
 		physics->SetIsUpdate(false);	//물리 off
-		position.y += 1;
-		if (key->IsHoldOrDown(DIK_D)) position.x += speed * 0.5f;
-		if (key->IsHoldOrDown(DIK_A)) position.x -= speed * 0.5f;
+
+		if(collider->IsCollideUpTile() == false) position.y += 1;
+
+		if (key->IsHoldOrDown(DIK_D) && collider->IsCollideRightTile() == false) position.x += speed * 0.5f;
+		if (key->IsHoldOrDown(DIK_A) && collider->IsCollideLeftTile() == false) position.x -= speed * 0.5f;
 		break;
 	}
 	case State::OnAir: break;

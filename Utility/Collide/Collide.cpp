@@ -65,14 +65,14 @@ uint Collide::GetCollide_Dir(Actor* lhs, Actor* rhs)
 	int min_y2 = rhs_position.y - rhs_scale.y / 2;
 	int max_y2 = rhs_position.y + rhs_scale.y / 2;
 
-	Collide_Dir temp = Collide_Null;
+	uint temp = Collide_Null;
 
 	if (min_x1 < max_x2 && max_x1 > min_x2 && min_y1 < max_y2 && max_y1 > min_y2)
 	{
-		if (min_x1 < max_x2) temp = (Collide_Dir)(temp | Collide_Left);
-		if (max_x1 > min_x2) temp = (Collide_Dir)(temp | Collide_Right);
-		if (min_y1 < max_y2) temp = (Collide_Dir)(temp | Collide_Down);
-		if (max_y1 > min_y2) temp = (Collide_Dir)(temp | Collide_Up);
+		if (lhs_position.x < rhs_position.x) temp = (uint)(temp | Collide_Right);
+		else temp = (uint)(temp | Collide_Left);
+		if (lhs_position.y < rhs_position.y) temp = (uint)(temp | Collide_Up);
+		else temp = (uint)(temp | Collide_Down);
 	}
 
 	return temp;
