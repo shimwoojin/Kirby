@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="M1_Pulled" Type="1" TexturePath="Assets/Texture/Enemies/Enemies.png" TextureSizeX="873" TextureSizeY="1239">
+  <Keyframe OffsetX="140" OffsetY="159" SizeX="22" SizeY="19" Time="1000"/>
+</Animation>

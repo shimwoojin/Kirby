@@ -10,7 +10,14 @@ public:
 	virtual void Update() override;
 	virtual void Destroy() override;
 
-private:
+	bool GetIsUpdate() { return is_update; }
+	void SetIsUpdate(bool is_update) { this->is_update = is_update; }
 
+	void SetScene(class Scene* scene) { this->scene = scene; }
+
+private:
+	class Scene* scene = nullptr;
+
+	bool is_update = false;
 };
 

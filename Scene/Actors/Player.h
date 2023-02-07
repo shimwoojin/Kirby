@@ -14,8 +14,8 @@ class Player final : public Actor
 public:
 	Player(class Context* const context);
 
-	KirbyState GetState() { return state; }
-	void SetState(KirbyState state) { this->state = state; }
+	KirbyState GetKirbyState() { return state; }
+	void SetKirbyState(KirbyState state) { this->state = state; }
 
 private:
 	void AddComponents();

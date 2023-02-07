@@ -28,8 +28,6 @@ private:
 	D3DXMATRIX projection;
 
 	class Scene* scene = nullptr;
-	class InputManager* key = nullptr;
-	class SceneManager* scene_manager = nullptr;
 	
 	struct SceneSize camera_position_strict = { 0,0,0,0 };
 	D3DXVECTOR3 stricted_position = { 0,0,0 };

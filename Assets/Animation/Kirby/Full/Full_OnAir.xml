@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Full_OnAir" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="64" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+  <Keyframe OffsetX="95" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+  <Keyframe OffsetX="124" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+  <Keyframe OffsetX="155" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+  <Keyframe OffsetX="185" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+  <Keyframe OffsetX="215" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+  <Keyframe OffsetX="245" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+  <Keyframe OffsetX="275" OffsetY="627" SizeX="25" SizeY="27" Time="200"/>
+</Animation>

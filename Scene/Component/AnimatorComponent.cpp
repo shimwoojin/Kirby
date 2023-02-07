@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Scene/Actors/Actor.h"
+#include "Scene/Actors/Player.h"
 #include "Scene/Actors/Monster.h"
 #include "AnimatorComponent.h"
 #include "StateComponent.h"
@@ -152,17 +153,37 @@ void AnimatorComponent::WhatRendering()
 
 	if (type == ActorType::Player)
 	{
-		switch (state->GetState())
+		auto kirby_state = static_cast<Player*>(actor)->GetKirbyState();
+
+		if (kirby_state == KirbyState::Hungry)
 		{
-		case State::Idle: SetCurrentAnimation("Idle");				break;
-		case State::Walk: SetCurrentAnimation("Walk");			break;
-		case State::Jump: SetCurrentAnimation("Jump");		break;
-		case State::OnAir: SetCurrentAnimation("OnAir");		break;
-		case State::Run: SetCurrentAnimation("Run");				break;
-		case State::Fly: SetCurrentAnimation("Fly");				break;
-		case State::Action: SetCurrentAnimation("Action1"); 	break;
-		case State::Damaged: break;
-		case State::Dead: 														break;
+			switch (state->GetState())
+			{
+			case State::Idle: SetCurrentAnimation("Idle");				break;
+			case State::Walk: SetCurrentAnimation("Walk");			break;
+			case State::Jump: SetCurrentAnimation("Jump");		break;
+			case State::OnAir: SetCurrentAnimation("OnAir");		break;
+			case State::Run: SetCurrentAnimation("Run");				break;
+			case State::Fly: SetCurrentAnimation("Fly");				break;
+			case State::Action: SetCurrentAnimation("Action1"); 	break;
+			case State::Damaged: break;
+			case State::Dead: 														break;
+			}
+		}
+		else if (kirby_state == KirbyState::Full)
+		{
+			switch (state->GetState())
+			{
+			case State::Idle: SetCurrentAnimation("Full_Idle");				break;
+			case State::Walk: SetCurrentAnimation("Full_Walk");			break;
+			case State::Jump: SetCurrentAnimation("Full_Jump");		break;
+			case State::OnAir: SetCurrentAnimation("Full_OnAir");	break;
+			case State::Run: break;
+			case State::Fly: break;
+			case State::Action: break;
+			case State::Damaged: break;
+			case State::Dead: 														break;
+			}
 		}
 	}
 	else if (type == ActorType::Monster)
@@ -206,6 +227,7 @@ void AnimatorComponent::WhatRendering()
 			{
 			case State::Idle: break;
 			case State::Walk: SetCurrentAnimation("M1_Walk");	break;
+			case State::Pulled: SetCurrentAnimation("M1_Pulled");	break;
 			case State::Jump: break;
 			case State::OnAir: break;
 			case State::Run: break;

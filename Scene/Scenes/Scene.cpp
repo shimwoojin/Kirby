@@ -13,6 +13,7 @@
 #include "Scene/Component/PhysicsComponent.h"
 #include "Scene/Component/ColliderComponent.h"
 #include "Scene/Component/SceneChangeComponent.h"
+#include "Scene/Component/ActionComponent.h"
 
 std::shared_ptr<Actor> Scene::player = nullptr;
 
@@ -54,6 +55,7 @@ void Scene::Update()
 		player->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f, 100.0f, 1.0f));		//플레이어 위치
 
 		player->GetComponent<MoveScriptComponent>()->SetSceneSize(scene_size);	//update
+		player->GetComponent<ActionComponent>()->SetScene(this);//update
 		auto physics = player->GetComponent<PhysicsComponent>();//update
 		physics->SetScene(this);//update
 		auto camera = player->GetComponent<CameraComponent>();//update

@@ -11,6 +11,7 @@ enum class State
 	Fly,
 	Action,
 	Damaged,
+	Pulled,
 	Dead
 };
 

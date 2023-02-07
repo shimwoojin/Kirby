@@ -27,6 +27,8 @@ void Renderer::PassMain()
 
 	for (const auto& actor : actors)
 	{
+		if (actor->IsActive() == false) continue;
+
 		auto renderable = actor->GetComponent<MeshRendererComponent>();
 		if (renderable == nullptr) continue;
 

@@ -27,6 +27,7 @@ void MoveScriptComponent::Update()
 	}	
 
 	physics->SetIsUpdate(true);	//물리 항시 적용
+	action->SetIsUpdate(false);		//액션일때만 on
 
 	D3DXVECTOR3 position = transform->GetPosition();
 
@@ -71,7 +72,7 @@ void MoveScriptComponent::Update()
 	}
 	case State::Action:
 	{
-
+		action->SetIsUpdate(true);
 		break;
 	}
 	case State::Dead:

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Full_Walk" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="3" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="31" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="59" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="88" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="117" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="146" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="175" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="204" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="232" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="260" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="289" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="317" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="345" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="374" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="403" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+  <Keyframe OffsetX="432" OffsetY="688" SizeX="25" SizeY="24" Time="200"/>
+</Animation>

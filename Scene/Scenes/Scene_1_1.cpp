@@ -15,6 +15,7 @@
 #include "Scene/Component/PhysicsComponent.h"
 #include "Scene/Component/ColliderComponent.h"
 #include "Scene/Component/SceneChangeComponent.h"
+#include "Scene/Component/ActionComponent.h"
 
 Scene_1_1::Scene_1_1(Context* const context)
 	: Scene(context)
@@ -69,6 +70,7 @@ void Scene_1_1::Init()
 
 	//화면 전환 시 업데이트 해야 할 항목들
 	player->GetComponent<MoveScriptComponent>()->SetSceneSize(scene_size);	//update
+	player->GetComponent<ActionComponent>()->SetScene(this);
 	auto physics = player->GetComponent<PhysicsComponent>();//update
 	physics->SetScene(this);//update
 	auto camera = player->GetComponent<CameraComponent>();//update

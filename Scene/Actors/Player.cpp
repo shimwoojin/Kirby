@@ -44,6 +44,10 @@ void Player::AddAnimations()
 	animator->AddAnimation("Assets/Animation/Kirby/Run.xml");
 	animator->AddAnimation("Assets/Animation/Kirby/Jump.xml");
 	animator->AddAnimation("Assets/Animation/Kirby/Action1.xml");
+	animator->AddAnimation("Assets/Animation/Kirby/Full/Full_Idle.xml");
+	animator->AddAnimation("Assets/Animation/Kirby/Full/Full_OnAir.xml");
+	animator->AddAnimation("Assets/Animation/Kirby/Full/Full_Walk.xml");
+	animator->AddAnimation("Assets/Animation/Kirby/Full/Full_Jump.xml");
 	animator->SetAnimationMode(AnimationMode::Play);
 	animator->SetCurrentAnimation("Idle");
 }

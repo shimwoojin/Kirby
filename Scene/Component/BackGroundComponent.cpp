@@ -11,7 +11,7 @@ void BackGroundComponent::Update()
 {
 	if (camera != nullptr)
 	{
-		auto camera_transform = camera->GetStrictedPosition();
+		const auto& camera_transform = camera->GetStrictedPosition();
 		transform->SetPosition(camera_transform);
 	}
 }
