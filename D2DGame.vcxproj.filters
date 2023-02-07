@@ -68,6 +68,7 @@
     <ClInclude Include="Scene\Scenes\Scene_1_4.h" />
     <ClInclude Include="Scene\Component\ColliderComponent.h" />
     <ClInclude Include="Scene\Component\SceneChangeComponent.h" />
+    <ClInclude Include="Scene\Component\ActionComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -130,5 +131,6 @@
     <ClCompile Include="Scene\Scenes\Scene_1_4.cpp" />
     <ClCompile Include="Scene\Component\ColliderComponent.cpp" />
     <ClCompile Include="Scene\Component\SceneChangeComponent.cpp" />
+    <ClCompile Include="Scene\Component\ActionComponent.cpp" />
   </ItemGroup>
 </Project>

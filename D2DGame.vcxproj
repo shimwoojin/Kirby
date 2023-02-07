@@ -163,6 +163,7 @@
     <ClInclude Include="Resource\IResource.h" />
     <ClInclude Include="Resource\Shader.h" />
     <ClInclude Include="Resource\Texture2D.h" />
+    <ClInclude Include="Scene\Component\ActionComponent.h" />
     <ClInclude Include="Scene\Component\AiScriptBasicComponent.h" />
     <ClInclude Include="Scene\Component\AnimatorComponent.h" />
     <ClInclude Include="Scene\Component\BackGroundComponent.h" />
@@ -230,6 +231,7 @@
     <ClCompile Include="Resource\IResource.cpp" />
     <ClCompile Include="Resource\Shader.cpp" />
     <ClCompile Include="Resource\Texture2D.cpp" />
+    <ClCompile Include="Scene\Component\ActionComponent.cpp" />
     <ClCompile Include="Scene\Component\AiScriptBasicComponent.cpp" />
     <ClCompile Include="Scene\Component\AnimatorComponent.cpp" />
     <ClCompile Include="Scene\Component\BackGroundComponent.cpp" />

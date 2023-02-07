@@ -36,6 +36,7 @@ private:
 private:
 	InputManager* key = nullptr;
 	std::shared_ptr<class PhysicsComponent> physics = nullptr;
+	std::shared_ptr<class ColliderComponent> collider = nullptr;
 
 	State state = State::Idle;
 

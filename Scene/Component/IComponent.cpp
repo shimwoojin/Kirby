@@ -12,6 +12,7 @@
 #include "PhysicsComponent.h"
 #include "ColliderComponent.h"
 #include "SceneChangeComponent.h"
+#include "ActionComponent.h"
 
 IComponent::IComponent(class Context* const context, Actor* const actor, TransformComponent* const transform)
 	: context(context)
@@ -40,3 +41,4 @@ REGISTER_COMPONENT_TYPE(AiScriptBasicComponent, ComponentType::AiScript_Basic)
 REGISTER_COMPONENT_TYPE(PhysicsComponent, ComponentType::Physics)
 REGISTER_COMPONENT_TYPE(ColliderComponent, ComponentType::Collider)
 REGISTER_COMPONENT_TYPE(SceneChangeComponent, ComponentType::SceneChange)
+REGISTER_COMPONENT_TYPE(ActionComponent, ComponentType::Action)

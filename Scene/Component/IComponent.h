@@ -14,7 +14,8 @@ enum class ComponentType : uint
 	BackGround,
 	Physics,
 	Collider,
-	SceneChange
+	SceneChange,
+	Action
 };
 
 class IComponent

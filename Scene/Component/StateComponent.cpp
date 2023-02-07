@@ -3,12 +3,14 @@
 #include "AnimatorComponent.h"
 #include "PhysicsComponent.h"
 #include "AiScriptBasicComponent.h"
+#include "ColliderComponent.h"
 #include "Scene/Actors/Actor.h"
 
 void StateComponent::Initialize()
 {
 	key = context->GetSubSystem<InputManager>();
 	physics = actor->GetComponent<PhysicsComponent>();
+	collider = actor->GetComponent<ColliderComponent>();
 }
 
 void StateComponent::Update()
@@ -50,7 +52,7 @@ void StateComponent::UpdateActor()
 		{
 			state = State::Jump;
 		}
-		else if (key->IsHoldOrDown(DIK_RIGHT))
+		else if (key->IsMouseRButtonHoldOrDown())
 		{
 			state = State::Action;
 		}
@@ -59,7 +61,19 @@ void StateComponent::UpdateActor()
 	break;
 	case State::Walk:
 	{
-		if (key->IsHoldOrDown(DIK_D))
+		if (key->IsHoldOrDown(DIK_W) && physics->IsOnGround())
+		{
+			state = State::Jump;
+		}
+		else if (key->IsHoldOrDown(DIK_SPACE))
+		{
+			state = State::Fly;
+		}
+		else if (key->IsMouseRButtonHoldOrDown())
+		{
+			state = State::Action;
+		}
+		else if (key->IsHoldOrDown(DIK_D))
 		{
 			is_mirrored_animation = false;
 			if (key->IsHoldOrDown(DIK_LSHIFT)) state = State::Run;
@@ -70,14 +84,6 @@ void StateComponent::UpdateActor()
 			is_mirrored_animation = true;
 			if (key->IsHoldOrDown(DIK_LSHIFT)) state = State::Run;
 			if (key->IsHoldOrDown(DIK_W) && physics->IsOnGround()) state = State::Jump;
-		}
-		else if (key->IsHoldOrDown(DIK_W) && physics->IsOnGround())
-		{
-			state = State::Jump;
-		}
-		else if (key->IsHoldOrDown(DIK_SPACE))
-		{
-			state = State::Fly;
 		}
 		else state = State::Idle;
 	}
@@ -120,7 +126,14 @@ void StateComponent::UpdateActor()
 		}
 		else if (physics->IsOnGround() == false)
 		{
-			state = State::OnAir;
+			if (key->IsHoldOrDown(DIK_D))
+			{
+				is_mirrored_animation = false;
+			}
+			else if (key->IsHoldOrDown(DIK_A))
+			{
+				is_mirrored_animation = true;
+			}
 		}
 		else state = State::Idle;
 
@@ -146,7 +159,7 @@ void StateComponent::UpdateActor()
 	break;
 	case State::Action:
 	{
-		if (key->IsHoldOrDown(DIK_RIGHT))
+		if (key->IsMouseRButtonHoldOrDown())
 		{
 			state = State::Action;
 		}

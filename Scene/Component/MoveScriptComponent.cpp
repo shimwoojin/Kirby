@@ -6,6 +6,7 @@
 #include "CameraComponent.h"
 #include "PhysicsComponent.h"
 #include "ColliderComponent.h"
+#include "ActionComponent.h"
 
 void MoveScriptComponent::Initialize()
 {
@@ -17,9 +18,13 @@ void MoveScriptComponent::Update()
 	auto state = actor->GetComponent<StateComponent>();
 	auto physics = actor->GetComponent<PhysicsComponent>();
 	auto collider = actor->GetComponent<ColliderComponent>();
+	auto action = actor->GetComponent<ActionComponent>();
 	auto key = context->GetSubSystem<InputManager>();
 
-	if (!camera || !state || !physics || !collider || !key) { assert(false); return; }	//다른 컴포넌트 널 체크
+	if (!camera || !state || !physics || !collider || !action || !key) 
+	{
+		assert(false); return; //다른 컴포넌트 널 체크
+	}	
 
 	physics->SetIsUpdate(true);	//물리 항시 적용
 
@@ -58,9 +63,23 @@ void MoveScriptComponent::Update()
 		if (key->IsHoldOrDown(DIK_A) && collider->IsCollideLeftTile() == false) position.x -= speed * 0.5f;
 		break;
 	}
-	case State::OnAir: break;
-	case State::Action: 												  	break;
-	case State::Dead: 													break;
+	case State::OnAir: 
+	{
+		if (key->IsHoldOrDown(DIK_D) && collider->IsCollideRightTile() == false) position.x += speed * 0.5f;
+		if (key->IsHoldOrDown(DIK_A) && collider->IsCollideLeftTile() == false) position.x -= speed * 0.5f;
+		break;
+	}
+	case State::Action:
+	{
+
+		break;
+	}
+	case State::Dead:
+	{
+
+		break;
+	}
+
 	}
 
 	ClipActor(position);
