@@ -112,7 +112,7 @@ std::shared_ptr<class Actor> Scene::AddBackGround(std::string path)
 	return back_ground;
 }
 
-std::shared_ptr<class Actor> Scene::AddDoor(std::string path, uint x, uint y)
+std::shared_ptr<class Actor> Scene::AddDoor(std::string path, float x, float y)
 {
 	std::shared_ptr<Actor> door = CreateActor();
 	door->SetActorType(ActorType::Door);

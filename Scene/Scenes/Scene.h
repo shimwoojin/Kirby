@@ -30,7 +30,7 @@ public:
 
 protected:
 	std::shared_ptr<class Actor> AddBackGround(std::string path);
-	std::shared_ptr<class Actor> AddDoor(std::string path, uint x, uint y);
+	std::shared_ptr<class Actor> AddDoor(std::string path, float x, float y);
 
 protected:
 	static std::shared_ptr<class Actor> player;

@@ -12,9 +12,11 @@ public:
 
 	void SetScene(class Scene* scene);
 
+public:
+	static uint scene_count;
+
 private:
 	static std::string scene_names[10];
-	static uint scene_count;
 
 private:
 	class Scene* scene = nullptr;
