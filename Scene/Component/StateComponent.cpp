@@ -3,6 +3,7 @@
 #include "AnimatorComponent.h"
 #include "PhysicsComponent.h"
 #include "AiScriptBasicComponent.h"
+#include "TransformComponent.h"
 #include "ColliderComponent.h"
 #include "Scene/Actors/Actor.h"
 #include "Scene/Actors/Player.h"
@@ -30,6 +31,7 @@ void StateComponent::Destroy()
 void StateComponent::UpdateActor()
 {
 	auto kirby_state = static_cast<Player*>(actor)->GetKirbyState();
+	auto animator = actor->GetComponent<AnimatorComponent>();
 
 	switch (state)
 	{
@@ -62,6 +64,43 @@ void StateComponent::UpdateActor()
 		else if (key->IsMouseRButtonDown() && kirby_state == KirbyState::Full)
 		{
 			static_cast<Player*>(actor)->SetKirbyState(KirbyState::Hungry);
+			state = State::Idle;
+		}
+		else if (key->IsDown(DIK_S))
+		{
+			auto kirby_eaten = static_cast<Player*>(actor)->GetKirbyEaten();
+			if(kirby_eaten == Monster_Attribute::None)
+			{
+				static_cast<Player*>(actor)->SetKirbyState(KirbyState::Hungry);
+				actor->GetTransform()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+				state = State::Idle;
+			}
+			else if (kirby_eaten == Monster_Attribute::Fire)
+			{
+				static_cast<Player*>(actor)->SetKirbyState(KirbyState::Fire);
+				static_cast<Player*>(actor)->SetKirbyEaten(Monster_Attribute::None);
+				actor->GetTransform()->SetScale(D3DXVECTOR3(60.0f, 80.0f, 1.0f));
+				auto position = actor->GetTransform()->GetPosition();
+				position.y += 10.0f;
+				actor->GetTransform()->SetPosition(position);
+				state = State::Idle;
+			}
+			else if (kirby_eaten == Monster_Attribute::Ice)
+			{
+				static_cast<Player*>(actor)->SetKirbyState(KirbyState::Fire);
+				static_cast<Player*>(actor)->SetKirbyEaten(Monster_Attribute::None);
+				actor->GetTransform()->SetScale(D3DXVECTOR3(60.0f, 80.0f, 1.0f));
+				auto position = actor->GetTransform()->GetPosition();
+				position.y += 10.0f;
+				actor->GetTransform()->SetPosition(position);
+				state = State::Idle;
+			}
+			state = State::Idle;
+		}
+		else if (key->IsDown(DIK_1))
+		{
+			static_cast<Player*>(actor)->SetKirbyState(KirbyState::Hungry);
+			actor->GetTransform()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 			state = State::Idle;
 		}
 		else state = State::Idle;
@@ -178,7 +217,14 @@ void StateComponent::UpdateActor()
 	}
 		break;
 	case State::Damaged:
+	{
+		if (animator->IsPaused() == true)
+		{
+			state = State::Idle;
+			animator->Play();
+		}
 		break;
+	}
 	case State::Dead:
 		break;
 	}

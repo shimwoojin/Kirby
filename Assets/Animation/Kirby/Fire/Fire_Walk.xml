@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Fire_Walk" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
+  <Keyframe OffsetX="7" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="34" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="60" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="87" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="115" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="140" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="140" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="168" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="195" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="220" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="246" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="274" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="301" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="301" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="330" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="359" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="387" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="417" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="444" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="472" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="499" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+  <Keyframe OffsetX="524" OffsetY="291" SizeX="24" SizeY="37" Time="100"/>
+</Animation>

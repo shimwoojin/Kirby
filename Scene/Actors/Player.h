@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include "Monster.h"
 
 enum class KirbyState
 {
@@ -17,11 +18,15 @@ public:
 	KirbyState GetKirbyState() { return state; }
 	void SetKirbyState(KirbyState state) { this->state = state; }
 
+	Monster_Attribute GetKirbyEaten() { return kirby_eaten; }
+	void SetKirbyEaten(Monster_Attribute kirby_eaten) { this->kirby_eaten = kirby_eaten; }
+
 private:
 	void AddComponents();
 	void AddAnimations();
 
 private:
 	KirbyState state = KirbyState::Hungry;
+	Monster_Attribute kirby_eaten = Monster_Attribute::None;
 };
 

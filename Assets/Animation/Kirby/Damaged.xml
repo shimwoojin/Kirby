@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Damaged" Type="0" TexturePath="Assets/Texture/Kirby/Kirby_Common.png" TextureSizeX="641" TextureSizeY="3388">
+  <Keyframe OffsetX="5" OffsetY="743" SizeX="26" SizeY="25" Time="150"/>
+  <Keyframe OffsetX="35" OffsetY="743" SizeX="26" SizeY="25" Time="150"/>
+  <Keyframe OffsetX="65" OffsetY="743" SizeX="26" SizeY="25" Time="150"/>
+  <Keyframe OffsetX="95" OffsetY="743" SizeX="26" SizeY="25" Time="150"/>
+</Animation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Fire_OnAir" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
+  <Keyframe OffsetX="6" OffsetY="83" SizeX="25" SizeY="36" Time="200"/>
+  <Keyframe OffsetX="145" OffsetY="82" SizeX="25" SizeY="36" Time="200"/>
+  <Keyframe OffsetX="60" OffsetY="126" SizeX="25" SizeY="36" Time="200"/>
+  <Keyframe OffsetX="198" OffsetY="126" SizeX="25" SizeY="36" Time="200"/>
+</Animation>

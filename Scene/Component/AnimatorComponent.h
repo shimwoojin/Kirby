@@ -47,6 +47,7 @@ public:
 	void Pause();
 
 	bool IsPlaying() const { return animation_mode == AnimationMode::Play; }
+	bool IsPaused() const { return animation_mode == AnimationMode::Pause; }
 
 private:
 	void SetStandardMaterial();

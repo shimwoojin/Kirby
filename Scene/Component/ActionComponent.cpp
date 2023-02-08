@@ -4,6 +4,7 @@
 #include "StateComponent.h"
 #include "../Actors/Actor.h"
 #include "../Actors/Player.h"
+#include "../Actors/Monster.h"
 
 void ActionComponent::Initialize()
 {
@@ -36,7 +37,9 @@ void ActionComponent::Update()
                 if (Collide::IsCollided(actor, scene_actor.get()) == true)  //끌어오다가 player와 몬스터가 닿으면
                 {
                     scene_actor->SetActive(false);
+                    auto attribute = std::static_pointer_cast<Monster>(scene_actor)->GetAttribute();
                     static_cast<Player*>(actor)->SetKirbyState(KirbyState::Full);
+                    static_cast<Player*>(actor)->SetKirbyEaten(attribute);
                 }
             }
         }

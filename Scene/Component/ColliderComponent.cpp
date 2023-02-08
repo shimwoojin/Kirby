@@ -3,6 +3,7 @@
 #include "../Actors/Actor.h"
 #include "ColliderComponent.h"
 #include "TransformComponent.h"
+#include "StateComponent.h"
 
 void ColliderComponent::Initialize()
 {
@@ -11,6 +12,9 @@ void ColliderComponent::Initialize()
 void ColliderComponent::Update()
 {
     collide_maptile = CollideMapTile();
+
+    if (is_update == false) return;
+
     collide_monster = CollideMonster();
 }
 
@@ -51,8 +55,9 @@ bool ColliderComponent::CollideMonster()
         if (type == ActorType::Monster)
         {
             uint collide_check = Collide::GetCollide_Dir(actor, scene_actor.get());
-            if (collide_check != Collide_Null)
+            if (collide_check != Collide_Null && scene_actor->IsActive() == true)
             {
+                actor->GetComponent<StateComponent>()->SetState(State::Damaged);
                 collide_monster_dir = collide_check;
                 return true;
             }

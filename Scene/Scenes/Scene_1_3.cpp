@@ -32,19 +32,14 @@ void Scene_1_3::Init()
 		map_tiles[i]->SetActorType(ActorType::MapTile);
 		map_tiles[i]->AddComponent<MeshRendererComponent>();
 		map_tiles[i]->AddComponent<MaterialRendererComponent>();
+		map_tiles[i]->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 	}
 
 	for (int i = 0; i < 40; i++)	//맵 위치 세팅
-	{
-		map_tiles[i]->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));
-	}
 
 	for (int i = 40; i < 60; i++)	//맵 위치 세팅
-	{
-		map_tiles[i]->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1230.0f + 60.0f * (i - 40), 90.0f, 1.0f));
-	}
 
 	//몬스터1
 	std::shared_ptr<Actor> monster = std::make_shared<Monster>(context);
@@ -53,8 +48,8 @@ void Scene_1_3::Init()
 
 	AddActor(monster);
 
-	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 80.0f, 1.0f));
-	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1300.0f, 160.0f, 1.0f));
+	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1300.0f, 150.0f, 1.0f));
 
 	//몬스터2
 	std::shared_ptr<Actor> monster_ice = std::make_shared<Monster>(context);
@@ -64,8 +59,8 @@ void Scene_1_3::Init()
 
 	AddActor(monster_ice);
 
-	monster_ice->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 80.0f, 1.0f));
-	monster_ice->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 100.0f, 1.0f));
+	monster_ice->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster_ice->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 90.0f, 1.0f));
 
 	//플레이어
 	AddActor(player);

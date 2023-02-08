@@ -19,7 +19,9 @@ void AnimatorComponent::Initialize()
 
 void AnimatorComponent::Update()
 {
+	//렌더링 뭐할지 정해줌. 플레이어(hungry, full, fire, ice, monster 등 여기서 애니메이션을 정함)
 	WhatRendering();
+
 	if (current_animation.expired() == true || IsPlaying() == false) return;
 
 
@@ -159,14 +161,14 @@ void AnimatorComponent::WhatRendering()
 		{
 			switch (state->GetState())
 			{
-			case State::Idle: SetCurrentAnimation("Idle");				break;
-			case State::Walk: SetCurrentAnimation("Walk");			break;
-			case State::Jump: SetCurrentAnimation("Jump");		break;
-			case State::OnAir: SetCurrentAnimation("OnAir");		break;
-			case State::Run: SetCurrentAnimation("Run");				break;
-			case State::Fly: SetCurrentAnimation("Fly");				break;
-			case State::Action: SetCurrentAnimation("Action1"); 	break;
-			case State::Damaged: break;
+			case State::Idle: SetCurrentAnimation("Idle");						break;
+			case State::Walk: SetCurrentAnimation("Walk");					break;
+			case State::Jump: SetCurrentAnimation("Jump");				break;
+			case State::OnAir: SetCurrentAnimation("OnAir");				break;
+			case State::Run: SetCurrentAnimation("Run");						break;
+			case State::Fly: SetCurrentAnimation("Fly");						break;
+			case State::Action: SetCurrentAnimation("Action1"); 			break;
+			case State::Damaged: SetCurrentAnimation("Damaged");  break;
 			case State::Dead: 														break;
 			}
 		}
@@ -185,6 +187,21 @@ void AnimatorComponent::WhatRendering()
 			case State::Dead: 														break;
 			}
 		}
+		else if (kirby_state == KirbyState::Fire)
+		{
+			switch (state->GetState())
+			{
+			case State::Idle: SetCurrentAnimation("Fire_Idle");				break;
+			case State::Walk: SetCurrentAnimation("Fire_Walk");			break;
+			case State::Jump: SetCurrentAnimation("Fire_Jump");			break;
+			case State::OnAir: SetCurrentAnimation("Fire_OnAir");	break;
+			case State::Run: SetCurrentAnimation("Fire_Run");			break;
+			case State::Fly: SetCurrentAnimation("Fire_Fly");					break;
+			case State::Action: break;
+			case State::Damaged: break;
+			case State::Dead: 														break;
+			}
+		}
 	}
 	else if (type == ActorType::Monster)
 	{
@@ -196,12 +213,13 @@ void AnimatorComponent::WhatRendering()
 			{
 			case State::Idle: break;
 			case State::Walk: SetCurrentAnimation("M_Fire1_Walk");	break;
+			case State::Pulled: SetCurrentAnimation("M_Fire1_Pulled");	break;
 			case State::Jump: break;
 			case State::OnAir: break;
 			case State::Run: break;
 			case State::Fly: break;
 			case State::Action: break;
-			case State::Damaged: break;
+			case State::Damaged: SetCurrentAnimation("M_Fire1_Damaged"); break;
 			case State::Dead: break;
 			}
 		}
@@ -210,13 +228,14 @@ void AnimatorComponent::WhatRendering()
 			switch (state->GetState())
 			{
 			case State::Idle: break;
-			case State::Walk: SetCurrentAnimation("M_Ice1_Walk");	break;
+			case State::Walk: SetCurrentAnimation("M_Ice1_Walk");		break;
+			case State::Pulled: SetCurrentAnimation("M_Ice1_Pulled"); 	break;
 			case State::Jump: break;
 			case State::OnAir: break;
 			case State::Run: break;
 			case State::Fly: break;
 			case State::Action: break;
-			case State::Damaged: break;
+			case State::Damaged: SetCurrentAnimation("M_Ice1_Damaged"); break;
 			case State::Dead: break;
 			}
 

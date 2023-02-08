@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Fire_Idle" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
+  <Keyframe OffsetX="6" OffsetY="3" SizeX="25" SizeY="34" Time="100"/>
+  <Keyframe OffsetX="34" OffsetY="3" SizeX="25" SizeY="34" Time="100"/>
+  <Keyframe OffsetX="59" OffsetY="3" SizeX="25" SizeY="34" Time="100"/>
+  <Keyframe OffsetX="119" OffsetY="3" SizeX="25" SizeY="34" Time="100"/>
+  <Keyframe OffsetX="146" OffsetY="3" SizeX="25" SizeY="34" Time="100"/>
+  <Keyframe OffsetX="171" OffsetY="3" SizeX="25" SizeY="34" Time="100"/>
+  <Keyframe OffsetX="198" OffsetY="3" SizeX="25" SizeY="34" Time="100"/>
+</Animation>

@@ -28,6 +28,7 @@ void MoveScriptComponent::Update()
 
 	physics->SetIsUpdate(true);	//물리 항시 적용
 	action->SetIsUpdate(false);		//액션일때만 on
+	collider->SetIsUpdate(true);	//몬스터 충돌 체크, 충돌 시 충돌 체크 off -> 무적상태(약 0.6초)
 
 	D3DXVECTOR3 position = transform->GetPosition();
 
@@ -73,6 +74,13 @@ void MoveScriptComponent::Update()
 	case State::Action:
 	{
 		action->SetIsUpdate(true);
+		break;
+	}
+	case State::Damaged:
+	{
+		collider->SetIsUpdate(false);
+		if (collider->IsCollideRightMonster() == true) position.x -= 0.5f;
+		if (collider->IsCollideLeftMonster() == true) position.x += 0.5f;
 		break;
 	}
 	case State::Dead:

@@ -12,6 +12,9 @@ public:
 
 	void SetScene(class Scene* scene) { this->scene = scene; }
 
+	bool GetIsUpdate() { return is_update; }
+	void SetIsUpdate(bool is_update) { this->is_update = is_update; }
+
 	bool IsCollideMapTile() { return collide_maptile; }
 	bool IsCollideMonster() { return collide_monster; }
 
@@ -35,6 +38,8 @@ private:
 
 private:
 	class Scene* scene = nullptr;
+
+	bool is_update = true;
 
 	bool collide_maptile = false;
 	bool collide_monster = false;

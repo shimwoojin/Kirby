@@ -72,6 +72,6 @@ void Scene_1_4::Init()
 	
 	AddActor(monster);
 	
-	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 80.0f, 1.0f));
-	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 100.0f, 1.0f));
+	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 90.0f, 1.0f));
 }

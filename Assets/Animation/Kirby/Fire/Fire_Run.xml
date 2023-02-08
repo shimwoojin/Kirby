@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Fire_Run" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
+  <Keyframe OffsetX="53" OffsetY="341" SizeX="34" SizeY="31" Time="100"/>
+  <Keyframe OffsetX="87" OffsetY="341" SizeX="34" SizeY="31" Time="100"/>
+  <Keyframe OffsetX="127" OffsetY="341" SizeX="34" SizeY="31" Time="100"/>
+  <Keyframe OffsetX="163" OffsetY="341" SizeX="34" SizeY="31" Time="100"/>
+  <Keyframe OffsetX="200" OffsetY="341" SizeX="34" SizeY="31" Time="100"/>
+  <Keyframe OffsetX="236" OffsetY="341" SizeX="34" SizeY="31" Time="100"/>
+  <Keyframe OffsetX="272" OffsetY="341" SizeX="34" SizeY="31" Time="100"/>
+</Animation>
