@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Fire_Damaged" Type="0" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
+  <Keyframe OffsetX="6" OffsetY="379" SizeX="25" SizeY="33" Time="150"/>
+  <Keyframe OffsetX="6" OffsetY="379" SizeX="25" SizeY="33" Time="150"/>
+  <Keyframe OffsetX="32" OffsetY="379" SizeX="25" SizeY="33" Time="150"/>
+  <Keyframe OffsetX="32" OffsetY="379" SizeX="25" SizeY="33" Time="150"/>
+</Animation>

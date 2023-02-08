@@ -135,4 +135,7 @@
     <ClCompile Include="Scene\Component\ActionComponent.cpp" />
     <ClCompile Include="Scene\Scenes\Scene_1_5.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Assets\Animation\Kirby\Fire\Fire_Damaged.xml" />
+  </ItemGroup>
 </Project>

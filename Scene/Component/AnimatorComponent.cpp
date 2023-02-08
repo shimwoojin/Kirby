@@ -161,14 +161,14 @@ void AnimatorComponent::WhatRendering()
 		{
 			switch (state->GetState())
 			{
-			case State::Idle: SetCurrentAnimation("Idle");						break;
-			case State::Walk: SetCurrentAnimation("Walk");					break;
-			case State::Jump: SetCurrentAnimation("Jump");				break;
-			case State::OnAir: SetCurrentAnimation("OnAir");				break;
-			case State::Run: SetCurrentAnimation("Run");						break;
-			case State::Fly: SetCurrentAnimation("Fly");						break;
-			case State::Action: SetCurrentAnimation("Action1"); 			break;
-			case State::Damaged: SetCurrentAnimation("Damaged");  break;
+			case State::Idle:			 SetCurrentAnimation("Idle");					break;
+			case State::Walk:			 SetCurrentAnimation("Walk");				break;
+			case State::Jump:			 SetCurrentAnimation("Jump");				break;
+			case State::OnAir:			 SetCurrentAnimation("OnAir");				break;
+			case State::Run:			 SetCurrentAnimation("Run");					break;
+			case State::Fly:				 SetCurrentAnimation("Fly");					break;
+			case State::Action:		 SetCurrentAnimation("Action1"); 			break;
+			case State::Damaged:	 SetCurrentAnimation("Damaged");		break;
 			case State::Dead: 														break;
 			}
 		}
@@ -176,10 +176,10 @@ void AnimatorComponent::WhatRendering()
 		{
 			switch (state->GetState())
 			{
-			case State::Idle: SetCurrentAnimation("Full_Idle");				break;
-			case State::Walk: SetCurrentAnimation("Full_Walk");			break;
-			case State::Jump: SetCurrentAnimation("Full_Jump");		break;
-			case State::OnAir: SetCurrentAnimation("Full_OnAir");	break;
+			case State::Idle:		 SetCurrentAnimation("Full_Idle");				break;
+			case State::Walk:		 SetCurrentAnimation("Full_Walk");				break;
+			case State::Jump:		 SetCurrentAnimation("Full_Jump");			break;
+			case State::OnAir:		 SetCurrentAnimation("Full_OnAir");			break;
 			case State::Run: break;
 			case State::Fly: break;
 			case State::Action: break;
@@ -191,14 +191,14 @@ void AnimatorComponent::WhatRendering()
 		{
 			switch (state->GetState())
 			{
-			case State::Idle: SetCurrentAnimation("Fire_Idle");				break;
-			case State::Walk: SetCurrentAnimation("Fire_Walk");			break;
-			case State::Jump: SetCurrentAnimation("Fire_Jump");			break;
-			case State::OnAir: SetCurrentAnimation("Fire_OnAir");	break;
-			case State::Run: SetCurrentAnimation("Fire_Run");			break;
-			case State::Fly: SetCurrentAnimation("Fire_Fly");					break;
+			case State::Idle:			 SetCurrentAnimation("Fire_Idle");				break;
+			case State::Walk:			 SetCurrentAnimation("Fire_Walk");			break;
+			case State::Jump:			 SetCurrentAnimation("Fire_Jump");			break;
+			case State::OnAir:			 SetCurrentAnimation("Fire_OnAir");			break;
+			case State::Run:			 SetCurrentAnimation("Fire_Run");				break;
+			case State::Fly:				 SetCurrentAnimation("Fire_Fly");				break;
 			case State::Action: break;
-			case State::Damaged: break;
+			case State::Damaged:	 SetCurrentAnimation("Fire_Damaged");		break;
 			case State::Dead: 														break;
 			}
 		}
