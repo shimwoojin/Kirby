@@ -31,8 +31,6 @@ void AiScriptBasicComponent::Update()
 	case State::Dead: break;
 	}
 
-	
-
 	transform->SetPosition(position);
 }
 

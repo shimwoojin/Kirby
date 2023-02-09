@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Boss_Jump" Type="1" TexturePath="Assets/Texture/Boss/Boss_Lv1.png" TextureSizeX="373" TextureSizeY="490">
+  <Keyframe OffsetX="1" OffsetY="152" SizeX="41" SizeY="44" Time="1000"/>
+  <Keyframe OffsetX="50" OffsetY="152" SizeX="41" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="151" OffsetY="152" SizeX="41" SizeY="44" Time="200"/>
+</Animation>

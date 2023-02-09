@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Boss_Idle" Type="1" TexturePath="Assets/Texture/Boss/Boss_Lv1.png" TextureSizeX="373" TextureSizeY="490">
+  <Keyframe OffsetX="3" OffsetY="4" SizeX="42" SizeY="39" Time="600"/>
+  <Keyframe OffsetX="49" OffsetY="4" SizeX="42" SizeY="39" Time="400"/>
+</Animation>

@@ -2,6 +2,7 @@
 #include "ActionComponent.h"
 #include "TransformComponent.h"
 #include "StateComponent.h"
+#include "AiScriptBossComponent.h"
 #include "../Actors/Actor.h"
 #include "../Actors/Player.h"
 #include "../Actors/Monster.h"
@@ -53,7 +54,7 @@ void ActionComponent::Swallow()
     for (auto& scene_actor : actors)
     {
         auto type = scene_actor->GetActorType();
-        if (type == ActorType::Monster)
+        if (type == ActorType::Monster && std::static_pointer_cast<Monster>(scene_actor)->GetIsBoss() == false)     //일반 몹에만 허용
         {
             if (Collide::IsCollidedActionBox(actor, scene_actor.get(), width, height) == true)
             {
@@ -105,7 +106,11 @@ void ActionComponent::Attack()
             {
                 if (scene_actor->GetComponent<StateComponent>()->GetState() != State::Damaged)
                 {
-                    scene_actor->GetComponent<StateComponent>()->SetState(State::Damaged);   //몬스터 상태 pulled로 변경
+                    scene_actor->GetComponent<StateComponent>()->SetState(State::Damaged);
+                    if (std::static_pointer_cast<Monster>(scene_actor)->GetIsBoss() == true)
+                    {
+                        scene_actor->GetComponent<AiScriptBossComponent>()->SetDamageTimer();
+                    }
                 }
                 std::static_pointer_cast<Monster>(scene_actor)->SubHp();
                 if(std::static_pointer_cast<Monster>(scene_actor)->GetHp() <= 0.0f)

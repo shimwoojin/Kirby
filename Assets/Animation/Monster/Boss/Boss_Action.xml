@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Boss_Action" Type="1" TexturePath="Assets/Texture/Boss/Boss_Lv1.png" TextureSizeX="373" TextureSizeY="490">
+  <Keyframe OffsetX="3" OffsetY="105" SizeX="41" SizeY="34" Time="300"/>
+  <Keyframe OffsetX="49" OffsetY="105" SizeX="41" SizeY="34" Time="300"/>
+  <Keyframe OffsetX="94" OffsetY="105" SizeX="41" SizeY="34" Time="300"/>
+  <Keyframe OffsetX="139" OffsetY="105" SizeX="41" SizeY="34" Time="300"/>
+</Animation>

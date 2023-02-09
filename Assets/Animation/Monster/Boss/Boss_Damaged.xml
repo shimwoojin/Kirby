@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Boss_Damaged" Type="1" TexturePath="Assets/Texture/Boss/Boss_Lv1.png" TextureSizeX="373" TextureSizeY="490">
+  <Keyframe OffsetX="102" OffsetY="310" SizeX="40" SizeY="42" Time="1000"/>
+</Animation>

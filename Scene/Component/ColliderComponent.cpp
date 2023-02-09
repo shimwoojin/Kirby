@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "../Scenes/Scene.h"
 #include "../Actors/Actor.h"
+#include "../Actors/Player.h"
 #include "ColliderComponent.h"
 #include "TransformComponent.h"
 #include "StateComponent.h"
@@ -66,6 +67,8 @@ bool ColliderComponent::CollideMonster()
                 stop_watch.Start();
 
                 actor->GetComponent<StateComponent>()->SetState(State::Damaged);
+                static_cast<Player*>(actor)->SubHp();
+                if (static_cast<Player*>(actor)->GetHp() <= 0.0f) actor->SetActive(false);
                 collide_monster_dir = collide_check;
                 return true;
             }

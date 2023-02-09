@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Boss_Walk" Type="1" TexturePath="Assets/Texture/Boss/Boss_Lv1.png" TextureSizeX="373" TextureSizeY="490">
+  <Keyframe OffsetX="4" OffsetY="51" SizeX="41" SizeY="45" Time="250"/>
+  <Keyframe OffsetX="46" OffsetY="51" SizeX="41" SizeY="45" Time="250"/>
+  <Keyframe OffsetX="90" OffsetY="51" SizeX="41" SizeY="45" Time="250"/>
+  <Keyframe OffsetX="135" OffsetY="51" SizeX="41" SizeY="45" Time="250"/>
+</Animation>

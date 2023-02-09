@@ -20,8 +20,8 @@ void StateComponent::Update()
 	auto type = actor->GetActorType();
 
 	if (type == ActorType::Player) UpdateActor();
-	else if (type == ActorType::Monster) UpdateMonster();
-	//else if (type == ActorType::Boss) UpdateBoss();
+	else if (type == ActorType::Monster && static_cast<Monster*>(actor)->GetIsBoss() == false) UpdateMonster();
+	else if (type == ActorType::Monster && static_cast<Monster*>(actor)->GetIsBoss() == true) UpdateBoss();
 	else return;
 }
 
@@ -33,6 +33,8 @@ void StateComponent::UpdateActor()
 {
 	auto kirby_state = static_cast<Player*>(actor)->GetKirbyState();
 	auto animator = actor->GetComponent<AnimatorComponent>();
+
+	static float attack_limit_time = 0.0f;
 
 	switch (state)
 	{
@@ -106,7 +108,8 @@ void StateComponent::UpdateActor()
 		}
 		else if (key->IsMouseLButtonHoldOrDown() && kirby_state != KirbyState::Hungry && kirby_state != KirbyState::Full)
 		{
-			state = State::Attack;
+			attack_limit_time += context->GetSubSystem<Timer>()->GetDeltaTimeMS();
+			if(attack_limit_time > 100.0f) state = State::Attack;
 		}
 		else state = State::Idle;
 	}
@@ -227,12 +230,16 @@ void StateComponent::UpdateActor()
 		break;
 	case State::Attack:		//TODO::
 	{
-		if (key->IsMouseLButtonHoldOrDown())
+		attack_limit_time += context->GetSubSystem<Timer>()->GetDeltaTimeMS();
+		if (key->IsMouseLButtonHoldOrDown() && attack_limit_time < 450.0f)
 		{
 			state = State::Attack;
 		}
 		else
+		{
+			attack_limit_time = 0.0f;
 			state = State::Idle;
+		}
 		break;
 	}
 	case State::Damaged:
@@ -285,21 +292,27 @@ void StateComponent::UpdateMonster()
 
 void StateComponent::UpdateBoss()
 {
+	auto AiScript = actor->GetComponent<AiScriptBasicComponent>();
+	static StopWatch stop_watch;
 
 	switch (state)
 	{
 	case State::Idle:
+	{
+		
+	}
 		break;
 	case State::Walk:
 	{
+		if (AiScript->GetIsRight() == true) is_mirrored_animation = false;
+		else is_mirrored_animation = true;
 	}
 	break;
-	case State::Pulled:
+	case State::Jump:
 	{
+
 		break;
 	}
-	case State::Run:
-		break;
 	case State::Action:
 		break;
 	case State::Damaged:
@@ -307,6 +320,7 @@ void StateComponent::UpdateBoss()
 		break;
 	}
 	case State::Dead:
+		actor->SetActive(false);
 		break;
 	}
 }

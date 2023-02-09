@@ -210,8 +210,9 @@ void AnimatorComponent::WhatRendering()
 	else if (type == ActorType::Monster)
 	{
 		auto m_type = static_cast<Monster*>(actor)->GetAttribute();
+		bool is_boss = static_cast<Monster*>(actor)->GetIsBoss();
 
-		if (m_type == Monster_Attribute::Fire)
+		if (m_type == Monster_Attribute::Fire && is_boss == false)
 		{
 			switch (state->GetState())
 			{
@@ -227,7 +228,7 @@ void AnimatorComponent::WhatRendering()
 			case State::Dead: break;
 			}
 		}
-		else if (m_type == Monster_Attribute::Ice)
+		else if (m_type == Monster_Attribute::Ice && is_boss == false)
 		{
 			switch (state->GetState())
 			{
@@ -244,7 +245,7 @@ void AnimatorComponent::WhatRendering()
 			}
 
 		}
-		else if(m_type == Monster_Attribute::None)
+		else if(m_type == Monster_Attribute::None && is_boss == false)
 		{
 			switch (state->GetState())
 			{
@@ -259,7 +260,18 @@ void AnimatorComponent::WhatRendering()
 			case State::Damaged: SetCurrentAnimation("M1_Damaged"); break;
 			case State::Dead: break;
 			}
-
+		}
+		else if (is_boss == true)
+		{
+			switch (state->GetState())
+			{
+			case State::Idle:		 SetCurrentAnimation("Boss_Idle");				break;
+			case State::Walk:		 SetCurrentAnimation("Boss_Walk");			break;
+			case State::Jump:		 SetCurrentAnimation("Boss_Jump");			break;
+			case State::Action:	 SetCurrentAnimation("Boss_Action");			break;
+			case State::Damaged: SetCurrentAnimation("Boss_Damaged"); break;
+			case State::Dead: break;
+			}
 		}
 	}
 	else if (type == ActorType::Weapon)

@@ -165,6 +165,7 @@
     <ClInclude Include="Resource\Texture2D.h" />
     <ClInclude Include="Scene\Component\ActionComponent.h" />
     <ClInclude Include="Scene\Component\AiScriptBasicComponent.h" />
+    <ClInclude Include="Scene\Component\AiScriptBossComponent.h" />
     <ClInclude Include="Scene\Component\AnimatorComponent.h" />
     <ClInclude Include="Scene\Component\BackGroundComponent.h" />
     <ClInclude Include="Scene\Component\ColliderComponent.h" />
@@ -234,6 +235,7 @@
     <ClCompile Include="Resource\Texture2D.cpp" />
     <ClCompile Include="Scene\Component\ActionComponent.cpp" />
     <ClCompile Include="Scene\Component\AiScriptBasicComponent.cpp" />
+    <ClCompile Include="Scene\Component\AiScriptBossComponent.cpp" />
     <ClCompile Include="Scene\Component\AnimatorComponent.cpp" />
     <ClCompile Include="Scene\Component\BackGroundComponent.cpp" />
     <ClCompile Include="Scene\Component\ColliderComponent.cpp" />

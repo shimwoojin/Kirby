@@ -8,6 +8,7 @@ enum class ComponentType : uint
 	MeshRenderer,
 	MoveScript,
 	AiScript_Basic,
+	AiScript_Boss,
 	Animator,
 	State,
 	Material,

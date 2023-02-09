@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Animation Name="Fire_Fly" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
-  <Keyframe OffsetX="6" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="35" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="65" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="94" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="123" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="153" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="184" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="214" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="245" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="276" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="306" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="336" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="366" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="396" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
-  <Keyframe OffsetX="425" OffsetY="419" SizeX="26" SizeY="42" Time="200"/>
+  <Keyframe OffsetX="6" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="35" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="65" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="94" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="123" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="153" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="184" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="214" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="245" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="276" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="306" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="336" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="366" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="396" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
+  <Keyframe OffsetX="425" OffsetY="419" SizeX="26" SizeY="44" Time="200"/>
 </Animation>

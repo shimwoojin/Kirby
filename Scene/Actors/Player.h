@@ -21,6 +21,10 @@ public:
 	Monster_Attribute GetKirbyEaten() { return kirby_eaten; }
 	void SetKirbyEaten(Monster_Attribute kirby_eaten) { this->kirby_eaten = kirby_eaten; }
 
+	float GetHp() { return hp; }
+	void SetHp(float hp) { this->hp = hp; }
+	void SubHp() { hp -= 50.0f; }
+
 private:
 	void AddComponents();
 	void AddAnimations();
@@ -28,5 +32,7 @@ private:
 private:
 	KirbyState state = KirbyState::Hungry;
 	Monster_Attribute kirby_eaten = Monster_Attribute::None;
+
+	float hp = 500.0f;
 };
 

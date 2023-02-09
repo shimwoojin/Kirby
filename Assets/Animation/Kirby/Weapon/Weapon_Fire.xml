@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Animation Name="Weapon_Fire" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
-  <Keyframe OffsetX="143" OffsetY="1029" SizeX="32" SizeY="32" Time="200"/>
-  <Keyframe OffsetX="180" OffsetY="1029" SizeX="32" SizeY="32" Time="200"/>
-  <Keyframe OffsetX="217" OffsetY="1029" SizeX="32" SizeY="32" Time="200"/>
-  <Keyframe OffsetX="254" OffsetY="1029" SizeX="32" SizeY="32" Time="200"/>
-  <Keyframe OffsetX="291" OffsetY="1029" SizeX="32" SizeY="32" Time="200"/>
-  <Keyframe OffsetX="327" OffsetY="1029" SizeX="32" SizeY="32" Time="200"/>
+  <Keyframe OffsetX="143" OffsetY="1029" SizeX="32" SizeY="32" Time="50"/>
+  <Keyframe OffsetX="180" OffsetY="1029" SizeX="32" SizeY="32" Time="50"/>
+  <Keyframe OffsetX="217" OffsetY="1029" SizeX="32" SizeY="32" Time="50"/>
+  <Keyframe OffsetX="254" OffsetY="1029" SizeX="32" SizeY="32" Time="50"/>
+  <Keyframe OffsetX="291" OffsetY="1029" SizeX="32" SizeY="32" Time="50"/>
+  <Keyframe OffsetX="327" OffsetY="1029" SizeX="32" SizeY="32" Time="50"/>
 </Animation>
