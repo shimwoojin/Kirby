@@ -46,9 +46,6 @@ void Scene_1_1::Init()
 	for (int i = 0; i < 40; i++)	map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));				//맵 위치
 	for (int i = 40; i < 60; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1230.0f + 60.0f * (i - 40), 90.0f, 1.0f));
 
-	//플레이어
-	AddActor(player);
-
 	//몬스터
 	std::shared_ptr<Actor> monster = std::make_shared<Monster>(context);
 	auto ai_move = monster->AddComponent<AiScriptBasicComponent>();
@@ -58,6 +55,10 @@ void Scene_1_1::Init()
 
 	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 90.0f, 1.0f));
+
+	//플레이어, 웨폰
+	AddActor(player);
+	AddActor(weapon);
 
 	//화면 전환 시 업데이트 해야 할 항목들
 	player->GetComponent<MoveScriptComponent>()->SetSceneSize(scene_size);	//update

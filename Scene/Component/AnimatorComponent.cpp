@@ -199,6 +199,7 @@ void AnimatorComponent::WhatRendering()
 			case State::Fly:				 SetCurrentAnimation("Fire_Fly");				break;
 			case State::Action: break;
 			case State::Damaged:	 SetCurrentAnimation("Fire_Damaged");		break;
+			//case State::Attack: SetCurrentAnimation("");		break;
 			case State::Dead: 														break;
 			}
 		}
@@ -257,5 +258,9 @@ void AnimatorComponent::WhatRendering()
 			}
 
 		}
+	}
+	else if (type == ActorType::Weapon)
+	{
+		SetCurrentAnimation("Weapon_Swallow");
 	}
 }

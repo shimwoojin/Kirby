@@ -27,6 +27,7 @@ public:
 
 	const SceneSize& GetSceneSize() const { return scene_size; }
 	const std::shared_ptr<class Actor>& GetPlayer() { return player; }
+	const std::shared_ptr<class Actor>& GetWeapon() { return weapon; }
 
 protected:
 	std::shared_ptr<class Actor> AddBackGround(std::string path);
@@ -34,6 +35,7 @@ protected:
 
 protected:
 	static std::shared_ptr<class Actor> player;
+	static std::shared_ptr<class Actor> weapon;
 	class Context* context = nullptr;
 	SceneSize scene_size;
 

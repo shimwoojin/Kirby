@@ -302,7 +302,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Assets\Animation\Kirby\Fire\Fire_Damaged.xml" />
+    <Xml Include="Assets\Animation\Kirby\Weapon\Weapon_Fire.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -114,6 +114,8 @@ void TransformComponent::SetPosition(const D3DXVECTOR3& world_position)
 
 	if (HasParent() == true)
 	{
+		if (GetLocalPosition() == world_position) return;
+
 		D3DXMATRIX inverse;
 		D3DXMatrixInverse(&inverse, nullptr, &parent.lock()->GetWorldMatrix());
 

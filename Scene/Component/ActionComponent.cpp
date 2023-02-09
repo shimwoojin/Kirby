@@ -12,7 +12,42 @@ void ActionComponent::Initialize()
 
 void ActionComponent::Update()
 {
+    auto weapon = scene->GetWeapon();
+    weapon->SetActive(false);
+
     if (is_update == false) return;
+
+    weapon->SetActive(true);
+
+    auto state = actor->GetComponent<StateComponent>();
+    if (state->GetState() == State::Action)
+    {
+        Swallow();
+    }
+    else if (state->GetState() == State::Attack)
+    {
+        Attack();
+    }
+
+}
+
+void ActionComponent::Destroy()
+{
+}
+
+void ActionComponent::Swallow()
+{
+    auto weapon = scene->GetWeapon();
+
+    auto scale = actor->GetTransform()->GetScale();
+    float width = 3.0f;
+    float height = 1.2f;
+    bool IsLeft = actor->GetComponent<StateComponent>()->GetIsMirroredAnimation();
+
+    if (IsLeft == true) weapon->GetTransform()->SetLocalPosition(D3DXVECTOR3(-width / 2, 0.0f, 1.0f));
+    else weapon->GetTransform()->SetLocalPosition(D3DXVECTOR3(width / 2, 0.0f, 1.0f));
+
+    weapon->GetTransform()->SetScale(D3DXVECTOR3(scale.x * width, scale.y * height, 1.0f));
 
     auto actors = scene->GetActors();
     for (auto& scene_actor : actors)
@@ -20,7 +55,7 @@ void ActionComponent::Update()
         auto type = scene_actor->GetActorType();
         if (type == ActorType::Monster)
         {
-            if (Collide::IsCollidedActionBox(actor, scene_actor.get()) == true)
+            if (Collide::IsCollidedActionBox(actor, scene_actor.get(), width, height) == true)
             {
                 auto position = actor->GetTransform()->GetPosition();
                 auto monster_position = scene_actor->GetTransform()->GetPosition();
@@ -46,6 +81,37 @@ void ActionComponent::Update()
     }
 }
 
-void ActionComponent::Destroy()
+void ActionComponent::Attack()
 {
+    auto weapon = scene->GetWeapon();
+
+    auto scale = actor->GetTransform()->GetScale();
+    float width = 1.0f;
+    float height = 1.0f;
+    bool IsLeft = actor->GetComponent<StateComponent>()->GetIsMirroredAnimation();
+
+    if (IsLeft == true) weapon->GetTransform()->SetLocalPosition(D3DXVECTOR3(-(width / 2 + 0.5f), 0.0f, 1.0f));
+    else weapon->GetTransform()->SetLocalPosition(D3DXVECTOR3(width / 2 + 0.5f, 0.0f, 1.0f));
+
+    weapon->GetTransform()->SetScale(D3DXVECTOR3(scale.x * width, scale.y * height, 1.0f));
+
+    auto actors = scene->GetActors();
+    for (auto& scene_actor : actors)
+    {
+        auto type = scene_actor->GetActorType();
+        if (type == ActorType::Monster)
+        {
+            if (Collide::IsCollidedActionBox(actor, scene_actor.get(), width, height) == true)
+            {
+                auto position = actor->GetTransform()->GetPosition();
+                auto monster_position = scene_actor->GetTransform()->GetPosition();
+
+                if (position.x < monster_position.x) monster_position.x += 1.0f;
+                else if(position.x > monster_position.x) monster_position.x -= 1.0f;
+
+                scene_actor->GetTransform()->SetPosition(monster_position);     //몬스터 끌어오기 처리
+                scene_actor->GetComponent<StateComponent>()->SetState(State::Damaged);   //몬스터 상태 pulled로 변경
+            }
+        }
+    }
 }

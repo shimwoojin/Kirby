@@ -76,6 +76,11 @@ void MoveScriptComponent::Update()
 		action->SetIsUpdate(true);
 		break;
 	}
+	case State::Attack:
+	{
+		action->SetIsUpdate(true);
+		break;
+	}
 	case State::Damaged:
 	{
 		collider->SetIsUpdate(false);

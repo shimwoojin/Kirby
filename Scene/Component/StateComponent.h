@@ -9,7 +9,8 @@ enum class State
 	Jump,
 	OnAir,
 	Fly,
-	Action,
+	Action,			//swallow
+	Attack,
 	Damaged,
 	Pulled,
 	Dead

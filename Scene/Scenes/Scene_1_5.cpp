@@ -50,4 +50,5 @@ void Scene_1_5::Init()
 
 	//플레이어
 	AddActor(player);
+	AddActor(weapon);
 }

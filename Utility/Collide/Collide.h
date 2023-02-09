@@ -13,7 +13,7 @@ class Collide
 {
 public:
 	static bool IsCollided(class Actor* lhs, class Actor* rhs);
-	static bool IsCollidedActionBox(class Actor* lhs, class Actor* rhs);
+	static bool IsCollidedActionBox(class Actor* lhs, class Actor* rhs, float x, float y);
 	static bool CollideLeftRightDown(class Actor* lhs, class Actor* rhs);
 	static uint GetCollide_Dir(class Actor* lhs, class Actor* rhs);
 };

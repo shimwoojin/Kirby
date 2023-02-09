@@ -103,6 +103,10 @@ void StateComponent::UpdateActor()
 			actor->GetTransform()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 			state = State::Idle;
 		}
+		else if (key->IsMouseLButtonHoldOrDown() && kirby_state != KirbyState::Hungry && kirby_state != KirbyState::Full)
+		{
+			state = State::Attack;
+		}
 		else state = State::Idle;
 	}
 	break;
@@ -119,6 +123,10 @@ void StateComponent::UpdateActor()
 		else if (key->IsMouseRButtonHoldOrDown() && kirby_state == KirbyState::Hungry)
 		{
 			state = State::Action;
+		}
+		else if (key->IsMouseLButtonHoldOrDown() && kirby_state != KirbyState::Hungry && kirby_state != KirbyState::Full)
+		{
+			state = State::Attack;
 		}
 		else if (key->IsHoldOrDown(DIK_D))
 		{
@@ -216,6 +224,16 @@ void StateComponent::UpdateActor()
 			state = State::Idle;
 	}
 		break;
+	case State::Attack:		//TODO::
+	{
+		if (key->IsMouseLButtonHoldOrDown())
+		{
+			state = State::Attack;
+		}
+		else
+			state = State::Idle;
+		break;
+	}
 	case State::Damaged:
 	{
 		if (animator->IsPaused() == true)
@@ -254,7 +272,10 @@ void StateComponent::UpdateMonster()
 	case State::Action:
 		break;
 	case State::Damaged:
+	{
+		if (key->IsMouseLButtonFree()) state = State::Walk;
 		break;
+	}
 	case State::Dead:
 		break;
 	}

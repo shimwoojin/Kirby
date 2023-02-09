@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Weapon_Swallow" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Action_Swallow.png" TextureSizeX="823" TextureSizeY="483">
+  <Keyframe OffsetX="436" OffsetY="248" SizeX="376" SizeY="91" Time="150"/>
+  <Keyframe OffsetX="38" OffsetY="249" SizeX="376" SizeY="91" Time="150"/>
+  <Keyframe OffsetX="420" OffsetY="26" SizeX="376" SizeY="91" Time="150"/>
+  <Keyframe OffsetX="16" OffsetY="28" SizeX="376" SizeY="91" Time="150"/>
+</Animation>

@@ -8,7 +8,8 @@ enum class ActorType
 	Player,
 	Monster,
 	BackGround,
-	MapTile
+	MapTile,
+	Weapon
 };
 
 class Actor

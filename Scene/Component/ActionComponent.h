@@ -15,6 +15,9 @@ public:
 
 	void SetScene(class Scene* scene) { this->scene = scene; }
 
+	void Swallow();
+	void Attack();
+
 private:
 	class Scene* scene = nullptr;
 

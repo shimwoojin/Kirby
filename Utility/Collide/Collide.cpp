@@ -26,7 +26,7 @@ bool Collide::IsCollided(Actor* lhs, Actor* rhs)
 	else return false;
 }
 
-bool Collide::IsCollidedActionBox(Actor* lhs, Actor* rhs)
+bool Collide::IsCollidedActionBox(Actor* lhs, Actor* rhs, float x, float y)
 {
 	D3DXVECTOR3 lhs_scale = lhs->GetTransform()->GetScale();
 	D3DXVECTOR3 lhs_position = lhs->GetTransform()->GetPosition();
@@ -42,16 +42,16 @@ bool Collide::IsCollidedActionBox(Actor* lhs, Actor* rhs)
 	if (IsLeft == false)
 	{
 		min_x1 = lhs_position.x;
-		max_x1 = lhs_position.x + lhs_scale.x * 3;
+		max_x1 = lhs_position.x + lhs_scale.x * x;
 	}
 	else
 	{
-		min_x1 = lhs_position.x - lhs_scale.x * 3;
+		min_x1 = lhs_position.x - lhs_scale.x * x;
 		max_x1 = lhs_position.x;
 	}
 
-	int min_y1 = lhs_position.y - lhs_scale.y;
-	int max_y1 = lhs_position.y + lhs_scale.y;
+	int min_y1 = lhs_position.y - lhs_scale.y * y / 2;
+	int max_y1 = lhs_position.y + lhs_scale.y * y / 2;
 
 	int min_x2 = rhs_position.x - rhs_scale.x / 2;
 	int max_x2 = rhs_position.x + rhs_scale.x / 2;

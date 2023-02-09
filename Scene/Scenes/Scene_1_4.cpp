@@ -61,10 +61,6 @@ void Scene_1_4::Init()
 	for(int i = 53; i < 56; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 53), 1470.0f, 1.0f));
 	for(int i = 56; i < 70; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(290.0f + 60.0f * (i - 56), 1590.0f, 1.0f));
 
-	//플레이어
-	AddActor(player);
-
-
 	//몬스터
 	std::shared_ptr<Actor> monster = std::make_shared<Monster>(context);
 	auto ai_move = monster->AddComponent<AiScriptBasicComponent>();
@@ -74,4 +70,8 @@ void Scene_1_4::Init()
 	
 	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 90.0f, 1.0f));
+
+	//플레이어
+	AddActor(player);
+	AddActor(weapon);
 }

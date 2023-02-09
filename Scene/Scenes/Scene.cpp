@@ -16,17 +16,39 @@
 #include "Scene/Component/ActionComponent.h"
 
 std::shared_ptr<Actor> Scene::player = nullptr;
+std::shared_ptr<Actor> Scene::weapon = nullptr;
 
 Scene::Scene(class Context* const context)
 	:context(context)
 {
 	renderer = context->GetSubSystem<Renderer>();
 
+	//scene 사이즈 기본 값
 	uint width = static_cast<uint>(Settings::Get().GetWidth() * 2);
 	uint height = static_cast<uint>(Settings::Get().GetHeight());
-
 	scene_size = { 0, width, 0, height};
+
+	//player 늦은 초기화
 	if (player == nullptr) player = std::make_shared<Player>(context);
+
+	//weapon 늦은 초기화 + player와 부모, 자식 설정
+	if (weapon == nullptr)
+	{
+		weapon = std::make_shared<Actor>(context);
+		weapon->SetActorType(ActorType::Weapon);
+		weapon->AddComponent<MeshRendererComponent>();
+		auto animator = weapon->AddComponent<AnimatorComponent>();
+
+		animator->AddAnimation("Assets/Animation/Kirby/Weapon/Weapon_Swallow.xml");
+		animator->SetAnimationMode(AnimationMode::Play);
+		animator->SetCurrentAnimation("Weapon_Swallow");
+
+		weapon->GetComponent<TransformComponent>()->SetParent(player->GetTransform());
+		player->GetTransform()->AddChild(weapon->GetTransform());
+
+		weapon->GetTransform()->SetLocalPosition(D3DXVECTOR3(1.0f, 1.0f, 1.0f));
+		weapon->GetTransform()->SetScale(D3DXVECTOR3(20.0f, 100.0f, 1.0f));
+	}
 }
 
 Scene::~Scene()
@@ -65,14 +87,14 @@ void Scene::Update()
 		actors[0]->GetComponent<BackGroundComponent>()->SetCamera(camera.get());	//배경 update
 		actors[1]->GetComponent<SceneChangeComponent>()->SetScene(this);			//문 update
 
-		renderer->UpdateRenderables(this);
+		renderer->UpdateRenderables(this);	//scene이 바뀌면 렌더 목록 업데이트
 
 		scene_change = false;
 	}
 
 	if (is_update == true)
 	{
-		renderer->UpdateRenderables(this);
+		renderer->UpdateRenderables(this);	//액터가 추가되거나 만들어지면 렌더 목록 업데이트
 		is_update = false;
 	}
 
