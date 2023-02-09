@@ -21,6 +21,7 @@ void StateComponent::Update()
 
 	if (type == ActorType::Player) UpdateActor();
 	else if (type == ActorType::Monster) UpdateMonster();
+	//else if (type == ActorType::Boss) UpdateBoss();
 	else return;
 }
 
@@ -66,7 +67,7 @@ void StateComponent::UpdateActor()
 			static_cast<Player*>(actor)->SetKirbyState(KirbyState::Hungry);
 			state = State::Idle;
 		}
-		else if (key->IsDown(DIK_S))
+		else if (key->IsDown(DIK_S) && kirby_state == KirbyState::Full)
 		{
 			auto kirby_eaten = static_cast<Player*>(actor)->GetKirbyEaten();
 			if(kirby_eaten == Monster_Attribute::None)
@@ -274,6 +275,35 @@ void StateComponent::UpdateMonster()
 	case State::Damaged:
 	{
 		if (key->IsMouseLButtonFree()) state = State::Walk;
+		break;
+	}
+	case State::Dead:
+		actor->SetActive(false);
+		break;
+	}
+}
+
+void StateComponent::UpdateBoss()
+{
+
+	switch (state)
+	{
+	case State::Idle:
+		break;
+	case State::Walk:
+	{
+	}
+	break;
+	case State::Pulled:
+	{
+		break;
+	}
+	case State::Run:
+		break;
+	case State::Action:
+		break;
+	case State::Damaged:
+	{
 		break;
 	}
 	case State::Dead:

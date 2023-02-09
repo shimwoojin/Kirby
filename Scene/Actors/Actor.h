@@ -7,6 +7,7 @@ enum class ActorType
 	Door,
 	Player,
 	Monster,
+	Boss,
 	BackGround,
 	MapTile,
 	Weapon

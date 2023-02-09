@@ -1,9 +1,11 @@
 #include "stdafx.h"
+#include "Scene/Scenes/Scene.h"
 #include "Scene/Actors/Actor.h"
 #include "Scene/Actors/Player.h"
 #include "Scene/Actors/Monster.h"
 #include "AnimatorComponent.h"
 #include "StateComponent.h"
+#include "TransformComponent.h"
 
 AnimatorComponent::AnimatorComponent(Context* const context, Actor* const actor, TransformComponent* const transform)
 	:IComponent(context, actor, transform)
@@ -197,6 +199,7 @@ void AnimatorComponent::WhatRendering()
 			case State::OnAir:			 SetCurrentAnimation("Fire_OnAir");			break;
 			case State::Run:			 SetCurrentAnimation("Fire_Run");				break;
 			case State::Fly:				 SetCurrentAnimation("Fire_Fly");				break;
+			case State::Attack:		 SetCurrentAnimation("Fire_Attack");			break;
 			case State::Action: break;
 			case State::Damaged:	 SetCurrentAnimation("Fire_Damaged");		break;
 			//case State::Attack: SetCurrentAnimation("");		break;
@@ -261,6 +264,12 @@ void AnimatorComponent::WhatRendering()
 	}
 	else if (type == ActorType::Weapon)
 	{
-		SetCurrentAnimation("Weapon_Swallow");
+		auto kirby = actor->GetTransform()->GetParent().lock()->GetActor();
+		auto kirby_state = static_cast<Player*>(kirby)->GetKirbyState();
+		
+		if (kirby_state == KirbyState::Hungry)
+			SetCurrentAnimation("Weapon_Swallow");
+		else if (kirby_state == KirbyState::Fire)
+			SetCurrentAnimation("Weapon_Fire");
 	}
 }

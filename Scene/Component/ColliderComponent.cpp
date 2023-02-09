@@ -7,11 +7,17 @@
 
 void ColliderComponent::Initialize()
 {
+    stop_watch.Start();
 }
 
 void ColliderComponent::Update()
 {
     collide_maptile = CollideMapTile();
+    is_update = true;
+
+    collide_time = stop_watch.GetElapsedTimeMs();
+
+    if (collide_time < 1000.0f) is_update = false;      //충돌 후 바로 재충돌 방지 -> 1초
 
     if (is_update == false) return;
 
@@ -57,6 +63,8 @@ bool ColliderComponent::CollideMonster()
             uint collide_check = Collide::GetCollide_Dir(actor, scene_actor.get());
             if (collide_check != Collide_Null && scene_actor->IsActive() == true)
             {
+                stop_watch.Start();
+
                 actor->GetComponent<StateComponent>()->SetState(State::Damaged);
                 collide_monster_dir = collide_check;
                 return true;

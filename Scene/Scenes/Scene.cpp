@@ -40,6 +40,7 @@ Scene::Scene(class Context* const context)
 		auto animator = weapon->AddComponent<AnimatorComponent>();
 
 		animator->AddAnimation("Assets/Animation/Kirby/Weapon/Weapon_Swallow.xml");
+		animator->AddAnimation("Assets/Animation/Kirby/Weapon/Weapon_Fire.xml");
 		animator->SetAnimationMode(AnimationMode::Play);
 		animator->SetCurrentAnimation("Weapon_Swallow");
 

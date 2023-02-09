@@ -38,6 +38,7 @@ private:
 
 private:
 	class Scene* scene = nullptr;
+	StopWatch stop_watch;
 
 	bool is_update = true;
 
@@ -46,5 +47,7 @@ private:
 
 	uint collide_tile_dir = 0;
 	uint collide_monster_dir = 0;
+
+	float collide_time = 1001.0f;
 };
 

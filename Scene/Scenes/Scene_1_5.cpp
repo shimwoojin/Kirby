@@ -48,6 +48,9 @@ void Scene_1_5::Init()
 	for (int i = 20; i < 25; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 20), 290.0f, 1.0f));
 	for (int i = 25; i < 30; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(750.0f + 60.0f * (i - 25), 490.0f, 1.0f));
 
+	//보스몹
+
+
 	//플레이어
 	AddActor(player);
 	AddActor(weapon);

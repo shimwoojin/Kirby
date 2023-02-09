@@ -86,7 +86,7 @@ void ActionComponent::Attack()
     auto weapon = scene->GetWeapon();
 
     auto scale = actor->GetTransform()->GetScale();
-    float width = 1.0f;
+    float width = 1.5f;
     float height = 1.0f;
     bool IsLeft = actor->GetComponent<StateComponent>()->GetIsMirroredAnimation();
 
@@ -103,14 +103,13 @@ void ActionComponent::Attack()
         {
             if (Collide::IsCollidedActionBox(actor, scene_actor.get(), width, height) == true)
             {
-                auto position = actor->GetTransform()->GetPosition();
-                auto monster_position = scene_actor->GetTransform()->GetPosition();
-
-                if (position.x < monster_position.x) monster_position.x += 1.0f;
-                else if(position.x > monster_position.x) monster_position.x -= 1.0f;
-
-                scene_actor->GetTransform()->SetPosition(monster_position);     //몬스터 끌어오기 처리
-                scene_actor->GetComponent<StateComponent>()->SetState(State::Damaged);   //몬스터 상태 pulled로 변경
+                if (scene_actor->GetComponent<StateComponent>()->GetState() != State::Damaged)
+                {
+                    scene_actor->GetComponent<StateComponent>()->SetState(State::Damaged);   //몬스터 상태 pulled로 변경
+                }
+                std::static_pointer_cast<Monster>(scene_actor)->SubHp();
+                if(std::static_pointer_cast<Monster>(scene_actor)->GetHp() <= 0.0f)
+                    scene_actor->GetComponent<StateComponent>()->SetState(State::Dead);
             }
         }
     }

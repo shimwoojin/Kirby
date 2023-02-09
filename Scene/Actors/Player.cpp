@@ -61,6 +61,7 @@ void Player::AddAnimations()
 	animator->AddAnimation("Assets/Animation/Kirby/Fire/Fire_Run.xml");
 	animator->AddAnimation("Assets/Animation/Kirby/Fire/Fire_OnAir.xml");
 	animator->AddAnimation("Assets/Animation/Kirby/Fire/Fire_Damaged.xml");
+	animator->AddAnimation("Assets/Animation/Kirby/Fire/Fire_Attack.xml");
 	animator->SetAnimationMode(AnimationMode::Play);
 	animator->SetCurrentAnimation("Idle");
 }

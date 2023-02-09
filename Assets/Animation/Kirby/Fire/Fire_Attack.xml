@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Animation Name="Fire_Attack" Type="1" TexturePath="Assets/Texture/Kirby/Kirby_Fire.png" TextureSizeX="694" TextureSizeY="1285">
+  <Keyframe OffsetX="189" OffsetY="1108" SizeX="29" SizeY="29" Time="150"/>
+  <Keyframe OffsetX="219" OffsetY="1108" SizeX="29" SizeY="29" Time="150"/>
+  <Keyframe OffsetX="253" OffsetY="1108" SizeX="29" SizeY="29" Time="150"/>
+  <Keyframe OffsetX="289" OffsetY="1108" SizeX="29" SizeY="29" Time="150"/>
+</Animation>

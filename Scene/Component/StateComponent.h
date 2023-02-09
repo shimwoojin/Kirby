@@ -34,6 +34,7 @@ public:
 private:
 	void UpdateActor();
 	void UpdateMonster();
+	void UpdateBoss();
 
 private:
 	InputManager* key = nullptr;
