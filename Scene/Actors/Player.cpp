@@ -18,7 +18,7 @@ Player::Player(Context* const context)
 	AddAnimations();
 
 	GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
-	GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f, 90.0f, 1.0f));
+	GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f, 280.0f, 1.0f));
 }
 
 void Player::AddComponents()

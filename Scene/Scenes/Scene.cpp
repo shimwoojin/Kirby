@@ -25,7 +25,7 @@ Scene::Scene(class Context* const context)
 
 	//scene 사이즈 기본 값
 	uint width = static_cast<uint>(Settings::Get().GetWidth() * 2);
-	uint height = static_cast<uint>(Settings::Get().GetHeight());
+	uint height = static_cast<uint>(Settings::Get().GetHeight() * 1.5);
 	scene_size = { 0, width, 0, height};
 
 	//player 늦은 초기화
@@ -75,7 +75,7 @@ void Scene::Update()
 	
 	if (scene_change == true)
 	{
-		player->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f, 100.0f, 1.0f));		//플레이어 위치
+		player->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f, 280.0f, 1.0f));		//플레이어 위치
 
 		player->GetComponent<MoveScriptComponent>()->SetSceneSize(scene_size);	//update
 		player->GetComponent<ActionComponent>()->SetScene(this);//update

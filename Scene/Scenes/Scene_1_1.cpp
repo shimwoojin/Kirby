@@ -28,13 +28,13 @@ void Scene_1_1::Init()
 	auto back_ground = AddBackGround("BackGround_Forest.png");
 
 	//문 -> 1번 액터 고정
-	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 160.0f);
+	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 280.0f);
 	auto scene_change = door->AddComponent<SceneChangeComponent>();
 
 	//맵 타일
-	std::shared_ptr<Actor> map_tiles[60];
+	std::shared_ptr<Actor> map_tiles[140];
 
-	for (int i = 0; i < 60; i++)
+	for (int i = 0; i < 140; i++)
 	{
 		map_tiles[i] = CreateActor();
 		map_tiles[i]->SetActorType(ActorType::MapTile);
@@ -43,8 +43,18 @@ void Scene_1_1::Init()
 		map_tiles[i]->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 	}
 	
-	for (int i = 0; i < 40; i++)	map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));				//맵 위치
-	for (int i = 40; i < 60; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1230.0f + 60.0f * (i - 40), 90.0f, 1.0f));
+	for (int i = 0; i < 40; i++)	map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 150.0f, 1.0f));				//맵 위치
+	for (int i = 40; i < 60; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1230.0f + 60.0f * (i - 40), 210.0f, 1.0f));
+	for (int i = 60; i < 100; i++)
+	{
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 60), 90.0f, 1.0f));
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Dessert_Under2.png");
+	}
+	for (int i = 100; i < 140; i++)
+	{
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 100), 30.0f, 1.0f));
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Dessert_Under2.png");
+	}
 
 	//몬스터
 	std::shared_ptr<Actor> monster = std::make_shared<Monster>(context);
@@ -54,7 +64,7 @@ void Scene_1_1::Init()
 	AddActor(monster);
 
 	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
-	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 90.0f, 1.0f));
+	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 210.0f, 1.0f));
 
 	//플레이어, 웨폰
 	AddActor(player);
