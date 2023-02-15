@@ -15,15 +15,15 @@ void Renderer::PassMain()
 
 	if (actors.empty() == true) return;
 
-	static RasterizerStateType RSType;
-	if(ImGui::Begin("WireFrame"))
-	{
-		static bool flag = true;
-		ImGui::Checkbox("Solid", &flag);
-		if (flag == false) RSType = RasterizerStateType::Cull_Back_Fill_Wireframe;
-		else RSType = RasterizerStateType::Cull_Back_Fill_Solid;
-	}
-	ImGui::End();
+	static RasterizerStateType RSType = RasterizerStateType::Cull_Back_Fill_Solid;
+	//if(ImGui::Begin("WireFrame"))
+	//{
+	//	static bool flag = true;
+	//	ImGui::Checkbox("Solid", &flag);
+	//	if (flag == false) RSType = RasterizerStateType::Cull_Back_Fill_Wireframe;
+	//	else RSType = RasterizerStateType::Cull_Back_Fill_Solid;
+	//}
+	//ImGui::End();
 
 	for (const auto& actor : actors)
 	{
@@ -97,8 +97,9 @@ void Renderer::PassMain()
 		}
 	}
 
-	bool show_demo_window = true;
-	ImGui::ShowDemoWindow(&show_demo_window);
+	//imgui Ã¢ ¶ç¿ì±â
+	//bool show_demo_window = true;
+	//ImGui::ShowDemoWindow(&show_demo_window);
 
 	// Rendering
 	ImGui::Render();
