@@ -35,20 +35,7 @@ void Scene_1_5::Init()
 	auto scene_change = door->AddComponent<SceneChangeComponent>();
 
 	//¸Ê Å¸ÀÏ
-	std::shared_ptr<Actor> map_tiles[30];
-
-	for (int i = 0; i < 30; i++)
-	{
-		map_tiles[i] = CreateActor();
-		map_tiles[i]->SetActorType(ActorType::MapTile);
-		map_tiles[i]->AddComponent<MeshRendererComponent>();
-		map_tiles[i]->AddComponent<MaterialRendererComponent>();
-		map_tiles[i]->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
-	}
-
-	for (int i = 0; i < 20; i++)	map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));
-	for (int i = 20; i < 25; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 20), 290.0f, 1.0f));
-	for (int i = 25; i < 30; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(750.0f + 60.0f * (i - 25), 490.0f, 1.0f));
+	AddMapTile();
 
 	//º¸½º¸÷
 	std::shared_ptr<Actor> boss = std::make_shared<Monster>(context);
@@ -57,15 +44,48 @@ void Scene_1_5::Init()
 	auto physics = boss->AddComponent<PhysicsComponent>();
 	physics->SetScene(this);
 	auto ai_move = boss->AddComponent<AiScriptBasicComponent>();
-	ai_move->SetMinMaxX(150, 900);
+	ai_move->SetMinMaxX(60, 960);
 	auto ai_boss = boss->AddComponent<AiScriptBossComponent>();
 
-	boss->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(200.0f, 200.0f, 1.0f));
-	boss->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(700.0f, 300.0f, 1.0f));
+	boss->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(120.0f, 120.0f, 1.0f));
+	boss->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(700.0f, 240.0f, 1.0f));
 
 	AddActor(boss);
 
 	//ÇÃ·¹ÀÌ¾î
 	AddActor(player);
 	AddActor(weapon);
+}
+
+void Scene_1_5::AddMapTile()
+{
+	//¸Ê Å¸ÀÏ
+	std::shared_ptr<Actor> map_tiles[63];
+
+	for (int i = 0; i < 63; i++)
+	{
+		map_tiles[i] = CreateActor();
+		map_tiles[i]->SetActorType(ActorType::MapTile);
+		map_tiles[i]->AddComponent<MeshRendererComponent>();
+		map_tiles[i]->AddComponent<MaterialRendererComponent>();
+		map_tiles[i]->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	}
+
+	for (int i = 0; i < 20; i++)
+	{
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Grass_Under.png");
+	}
+	for (int i = 20; i < 40; i++)
+	{
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 20), 90.0f, 1.0f));
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Grass_Under.png");
+	}
+	for (int i = 40; i < 60; i++)
+	{
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 40), 150.0f, 1.0f));
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Grass.png");
+	}
+	for (int i = 60; i < 63; i++)
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 60), 330.0f, 1.0f));
 }

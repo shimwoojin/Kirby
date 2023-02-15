@@ -14,19 +14,91 @@
 #include "Scene/Component/AiScriptBasicComponent.h"
 #include "Scene/Component/SceneChangeComponent.h"
 
+Scene_1_3::Scene_1_3(Context* const context)
+	: Scene(context)
+{
+	uint width = static_cast<uint>(Settings::Get().GetWidth() * 6);
+	uint height = static_cast<uint>(Settings::Get().GetHeight());
+
+	scene_size = { 0, width, 0, height };
+}
+
 void Scene_1_3::Init()
 {
 	//배경
-	auto back_ground = AddBackGround("BackGround_Forest.png");
+	auto back_ground = AddBackGround("BackGround_Forest2.png");
 
 	//문
-	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 160.0f);
+	auto door = AddDoor("Door.png", scene_size.max_x - 50.0f, 220.0f);
 	auto scene_change = door->AddComponent<SceneChangeComponent>();
 
 	//맵 타일
-	std::shared_ptr<Actor> map_tiles[60];
+	AddMapTile();
 
-	for (int i = 0; i < 60; i++)
+	//몬스터1
+	std::shared_ptr<Actor> monster = std::make_shared<Monster>(context);
+	auto ai_move = monster->AddComponent<AiScriptBasicComponent>();
+	ai_move->SetMinMaxX(1500, 2000);
+	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1500.0f, 210.0f, 1.0f));
+	AddActor(monster);
+
+	//몬스터2
+	std::shared_ptr<Actor> monster2 = std::make_shared<Monster>(context);
+	std::static_pointer_cast<Monster>(monster2)->SetAttribute(Monster_Attribute::Ice);
+	auto ai_move2 = monster2->AddComponent<AiScriptBasicComponent>();
+	ai_move2->SetMinMaxX(500, 1000);
+	monster2->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster2->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(500.0f, 210.0f, 1.0f));
+	AddActor(monster2);
+
+	//몬스터3
+	std::shared_ptr<Actor> monster3 = std::make_shared<Monster>(context);
+	std::static_pointer_cast<Monster>(monster3)->SetAttribute(Monster_Attribute::Fire);
+	auto ai_move3 = monster3->AddComponent<AiScriptBasicComponent>();
+	ai_move3->SetMinMaxX(2500, 3000);
+	monster3->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster3->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(2500.0f, 210.0f, 1.0f));
+	AddActor(monster3);
+
+	//몬스터4
+	std::shared_ptr<Actor> monster4 = std::make_shared<Monster>(context);
+	auto ai_move4 = monster4->AddComponent<AiScriptBasicComponent>();
+	ai_move4->SetMinMaxX(3500, 4000);
+	monster4->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster4->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(3500.0f, 210.0f, 1.0f));
+	AddActor(monster4);
+
+	//몬스터5
+	std::shared_ptr<Actor> monster5 = std::make_shared<Monster>(context);
+	std::static_pointer_cast<Monster>(monster5)->SetAttribute(Monster_Attribute::Ice);
+	auto ai_move5 = monster5->AddComponent<AiScriptBasicComponent>();
+	ai_move5->SetMinMaxX(4500, 5000);
+	monster5->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster5->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(4500.0f, 210.0f, 1.0f));
+	AddActor(monster5);
+
+	//몬스터6
+	std::shared_ptr<Actor> monster6 = std::make_shared<Monster>(context);
+	std::static_pointer_cast<Monster>(monster6)->SetAttribute(Monster_Attribute::Fire);
+	auto ai_move6 = monster6->AddComponent<AiScriptBasicComponent>();
+	ai_move6->SetMinMaxX(5500, 6000);
+	monster6->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
+	monster6->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(5500.0f, 210.0f, 1.0f));
+	AddActor(monster6);
+
+
+	//플레이어
+	AddActor(player);
+	AddActor(weapon);
+}
+
+void Scene_1_3::AddMapTile()
+{
+	//맵 타일
+	std::shared_ptr<Actor> map_tiles[309];
+
+	for (int i = 0; i < 309; i++)
 	{
 		map_tiles[i] = CreateActor();
 		map_tiles[i]->SetActorType(ActorType::MapTile);
@@ -35,34 +107,19 @@ void Scene_1_3::Init()
 		map_tiles[i]->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
 	}
 
-	for (int i = 0; i < 40; i++)	//맵 위치 세팅
+	for (int i = 0; i < 103; i++)	//1층
+	{
 		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));
-
-	for (int i = 40; i < 60; i++)	//맵 위치 세팅
-		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1230.0f + 60.0f * (i - 40), 90.0f, 1.0f));
-
-	//몬스터1
-	std::shared_ptr<Actor> monster = std::make_shared<Monster>(context);
-	auto ai_move = monster->AddComponent<AiScriptBasicComponent>();
-	ai_move->SetMinMaxX(1300, 1900);
-
-	AddActor(monster);
-
-	monster->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
-	monster->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(1300.0f, 150.0f, 1.0f));
-
-	//몬스터2
-	std::shared_ptr<Actor> monster_ice = std::make_shared<Monster>(context);
-	std::static_pointer_cast<Monster>(monster_ice)->SetAttribute(Monster_Attribute::Ice);
-	auto ai_move_ice = monster_ice->AddComponent<AiScriptBasicComponent>();
-	ai_move_ice->SetMinMaxX(300, 900);
-
-	AddActor(monster_ice);
-
-	monster_ice->GetComponent<TransformComponent>()->SetScale(D3DXVECTOR3(60.0f, 60.0f, 1.0f));
-	monster_ice->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(400.0f, 90.0f, 1.0f));
-
-	//플레이어
-	AddActor(player);
-	AddActor(weapon);
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Grass_Under.png");
+	}
+	for (int i = 103; i < 206; i++)	//2층
+	{
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 103), 90.0f, 1.0f));
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Grass_Under.png");
+	}
+	for (int i = 206; i < 309; i++)	//3층
+	{
+		map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 206), 150.0f, 1.0f));
+		map_tiles[i]->GetComponent<MaterialRendererComponent>()->SetTexture2D("./Assets/Texture/Maps/MapTile_Grass.png");
+	}
 }

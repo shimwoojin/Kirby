@@ -46,7 +46,7 @@ void Scene_1_4::Init()
 	}
 
 	//타일 위치
-	for (int i = 0; i < 20; i++)	map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));
+	for (int i = 0; i < 20; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * i, 30.0f, 1.0f));
 	for(int i = 20; i < 23; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(290.0f + 60.0f * (i - 20), 150.0f, 1.0f));
 	for(int i = 23; i < 26; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(30.0f + 60.0f * (i - 23), 270.0f, 1.0f));
 	for(int i = 26; i < 29; i++) map_tiles[i]->GetComponent<TransformComponent>()->SetPosition(D3DXVECTOR3(290.0f + 60.0f * (i - 26), 390.0f, 1.0f));

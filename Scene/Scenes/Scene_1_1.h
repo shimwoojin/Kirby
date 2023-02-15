@@ -7,5 +7,8 @@ public:
 	Scene_1_1(class Context* const context);
 
 	virtual void Init() override;
+
+private:
+	void AddMapTile();
 };
 

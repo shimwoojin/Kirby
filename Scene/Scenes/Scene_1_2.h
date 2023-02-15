@@ -7,5 +7,8 @@ public:
 	using Scene::Scene;
 
 	virtual void Init() override;
+
+private:
+	void AddMapTile();
 };
 
